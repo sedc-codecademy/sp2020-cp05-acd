@@ -1,0 +1,5 @@
+/* utilized flexbox to center the content */
+.row {
+    display: flex;
+    justify-content: center;
+}
