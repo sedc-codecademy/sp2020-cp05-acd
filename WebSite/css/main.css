@@ -1,3 +1,62 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========
+COLORS
+*/
+
+.upper-nav-color, .white-section-color {
+    background-color: #ffffff;
+}
+
+.nav-color, .dark-div-color{
+    background-color: #2f75d3;
+}
+
+.upper-div-color {
+    background-color: #99c1e3;
+}
+
+.light-card-color {
+    background-color: #609df2;
+}
+
+.btn-color {
+    background-color: #3175d1;
+}
+
+.footer-color {
+    background-color: #d3e7f9;
+}
+
+.video-section-color {
+    background-color: #d1d0d0;
+}
+
+.container-quad {
+    max-width: 950px;
+    max-height: 300px;
+    margin: 0 auto;
+}
+
+.btn {
+    width: 140px;
+    height: 45px;
+    background-color: #3175d1;
+    border: none;
+    color: #f9ffff;
+}
+
+
+
+
+
+
 /* utilized flexbox to center the content */
 .row {
     display: flex;

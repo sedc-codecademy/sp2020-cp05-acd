@@ -1,11 +1,11 @@
 /* provided to us to get us going */
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+} */
 
 body {
   font-family: "Open Sans", sans-serif;
