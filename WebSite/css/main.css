@@ -240,11 +240,22 @@ CONTENTS
     }
     .middle-video .btn-navigate {  
         display: inline;
-        position: absolute;
+        position: absolute
+    }
+    .btn-navigate-right {
+        left: 265px;
     }
 }
-
-
+@media only screen and (max-width: 375px) {
+    .btn-navigate-right {
+        left: 240px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .btn-navigate-right {
+        left: 213px;
+    }
+}
 
 /* ==========
 3.2 SUGGESTED-CONTENT SECTION
