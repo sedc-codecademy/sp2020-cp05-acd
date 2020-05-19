@@ -182,7 +182,9 @@ CONTENTS
 }
 
 
-
+/* 
+MAKE ALL VIDEO WINDOWS SMALLER > ONLY MERGE THEM ON MOBILE!
+*/
 
 .middle-video {
     background-color: red;
