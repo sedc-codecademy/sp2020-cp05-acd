@@ -11,7 +11,7 @@ CONTENTS
 
 1.COLORS
 2.ELEMENTS
-    2.1 MAIN-BUTTON
+    2.1 BUTTONS
     2.2 LOWER-CARD
     2.3 SECTION-DIVIDER
 3.SECTIONS
@@ -64,7 +64,7 @@ CONTENTS
 ==================================================================*/
 
 /* ==========
-2.1 MAIN-BUTTON
+2.1 BUTTONS
 */
 
 .btn {
@@ -74,6 +74,16 @@ CONTENTS
     border: none;
     color: #f9ffff;
     font-size: 17px;
+}
+
+.btn-navigate {
+    width: 87px;
+    height: 71px;
+    background-color: #9b9c9f;
+    border: none;
+    font-size: 4rem;
+    color: #feffff;
+    opacity: 70%;
 }
 
 /* ==========
@@ -157,7 +167,7 @@ CONTENTS
 */
 
 .video-section {
-    background-color: gray;
+    background-color: #d1d0d0;
     padding-bottom: 1px;
 }
 
@@ -175,16 +185,14 @@ CONTENTS
     background-color: green;
     height: 319px;
     width: 188px;
+    display: flex;
+    align-items: center;
 }
 
 .next-video {
     background-color: purple;
+    justify-content: flex-end;
 }
-
-
-/* 
-MAKE ALL VIDEO WINDOWS SMALLER > ONLY MERGE THEM ON MOBILE!
-*/
 
 .middle-video {
     background-color: red;
@@ -192,16 +200,31 @@ MAKE ALL VIDEO WINDOWS SMALLER > ONLY MERGE THEM ON MOBILE!
     width: 480px;
 }
 
+.prev-video .btn-navigate {
+    position: relative;
+}
+
 @media only screen and (max-width: 768px) {
     .middle-video {
-        background-color: white;
+        height: calc(324px - 50px);
+        width: calc(480px - 50px);
     }
     .prev-video, .next-video {
-        background-color: red;
         height: calc(319px - 50px);
         width: calc(188px - 50px);
     }
 }
+@media only screen and (max-width: 767px) {
+    .middle-video {
+        height: calc(324px - 200px);
+        width: calc(480px - 200px);
+    }
+    .prev-video, .next-video {
+        display: none;
+    }
+}
+
+
 
 /* ==========
 3.2 SUGGESTED-CONTENT SECTION
