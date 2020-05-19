@@ -156,7 +156,12 @@ CONTENTS
 3.1 VIDEO-SECTION
 */
 
-.vid-row {
+.video-section {
+    background-color: gray;
+    padding-bottom: 1px;
+}
+
+.video-row {
     max-width: 1360px;
     background-color: blue;
     margin: 37px auto;
@@ -167,10 +172,17 @@ CONTENTS
 }
 
 .prev-video, .next-video {
-    background-color: red;
+    background-color: green;
     height: 319px;
     width: 188px;
 }
+
+.next-video {
+    background-color: purple;
+}
+
+
+
 
 .middle-video {
     background-color: red;
@@ -178,7 +190,16 @@ CONTENTS
     width: 480px;
 }
 
-
+@media only screen and (max-width: 768px) {
+    .middle-video {
+        background-color: white;
+    }
+    .prev-video, .next-video {
+        background-color: red;
+        height: calc(319px - 50px);
+        width: calc(188px - 50px);
+    }
+}
 
 /* ==========
 3.2 SUGGESTED-CONTENT SECTION
