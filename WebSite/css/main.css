@@ -45,6 +45,10 @@ COLORS
     margin: 0 auto;
 }
 
+/* ==========
+MAIN-BUTTON
+*/
+
 .btn {
     width: 140px;
     height: 45px;
@@ -52,10 +56,6 @@ COLORS
     border: none;
     color: #f9ffff;
     font-size: 17px;
-}
-
-.upper-card {
-    width: 237.5px;
 }
 
 /* ==========
@@ -95,6 +95,30 @@ LOWER-CARD
     overflow: hidden;
     text-align: left;
     line-height: 1.25;
+}
+
+/* ==========
+SECTION-DIVIDER
+*/
+
+.section-divider {
+    height: 63px;
+    background-color: #2f75d3;
+    display: flex;
+}
+
+.section-divider h1 {
+    margin-left: 15%;
+    align-self: center;
+    color: #f8ffe4;
+}
+
+
+/* NAV HEIGHT - 40px */
+/* SECTION DIVIDER HEIGHT - 63px */
+
+.upper-card {
+    width: 237.5px;
 }
 
 h1 {
