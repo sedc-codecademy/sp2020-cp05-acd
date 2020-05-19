@@ -45,6 +45,10 @@ COLORS
     margin: 0 auto;
 }
 
+/* ==========
+MAIN-BUTTON
+*/
+
 .btn {
     width: 140px;
     height: 45px;
@@ -52,10 +56,6 @@ COLORS
     border: none;
     color: #f9ffff;
     font-size: 17px;
-}
-
-.upper-card {
-    width: 237.5px;
 }
 
 /* ==========
@@ -95,6 +95,71 @@ LOWER-CARD
     overflow: hidden;
     text-align: left;
     line-height: 1.25;
+}
+
+/* ==========
+SECTION-DIVIDER
+*/
+
+.section-divider {
+    height: 63px;
+    background-color: #2f75d3;
+    display: flex;
+}
+
+.section-divider h1 {
+    margin-left: 10vw;
+    align-self: center;
+    color: #f8ffe4;
+}
+
+@media only screen and (min-width: 2500px) {
+    .section-divider h1 {
+        margin-left: 27vw;
+    }
+}
+@media only screen and (max-width: 1025px) {
+    .section-divider h1 {
+        margin-left: 5vw;
+    }
+}
+
+@media only screen and (min-width: 1900px) and (max-width: 2500px){
+    .section-divider h1 {
+        margin-left: 20vw;
+    }
+}
+
+
+/* ==========
+CONTENT-SECTION (Најнови содржини)
+*/
+
+.content-row {
+    margin-top: 37px;
+    max-width: 1360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 770px) {
+    .content-mid-col {
+        margin-top: calc(55px - 37px);
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .lower-card {
+        margin-bottom: 37px;
+    }
+}
+
+
+/* NAV HEIGHT - 40px */
+/* SECTION DIVIDER HEIGHT - 63px */
+
+.upper-card {
+    width: 237.5px;
 }
 
 h1 {
