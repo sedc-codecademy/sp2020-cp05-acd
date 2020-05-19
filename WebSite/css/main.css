@@ -108,10 +108,20 @@ SECTION-DIVIDER
 }
 
 .section-divider h1 {
-    margin-left: 15%;
+    margin-left: 10vw;
     align-self: center;
     color: #f8ffe4;
 }
+
+.content-row {
+    /* justify-content: space-evenly; */
+    margin-top: 37px;
+}
+
+.content-mid-col {
+    margin-top: calc(55px - 37px);
+}
+
 
 
 /* NAV HEIGHT - 40px */
