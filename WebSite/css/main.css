@@ -195,8 +195,6 @@ CONTENTS
     height: 324px;
     width: 480px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .prev-video .btn-navigate {
@@ -233,14 +231,16 @@ CONTENTS
     .middle-video {
         height: calc(324px - 125px);
         width: calc(480px - 200px);
+        display: flex;
+        align-items: center;
     }
     .prev-video, .next-video {
         display: none;
         position: absolute;
     }
-    .middle-video .btn-navigate {
-        display: block;
-        /* position: absolute; */
+    .middle-video .btn-navigate {  
+        display: inline;
+        position: absolute;
     }
 }
 
