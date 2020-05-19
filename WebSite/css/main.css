@@ -6,9 +6,22 @@
   padding: 0;
 }
 
+/* ===============================================================
+CONTENTS
+
+1.COLORS
+2.ELEMENTS
+    2.1 MAIN-BUTTON
+    2.2 LOWER-CARD
+    2.3 SECTION-DIVIDER
+3.SECTIONS
+    3.1 VIDEO SECTION
+    3.2 SUGGESTED-CONTENT SECTION
+4.MISCELLANEOUS && TBD
+==================================================================*/
 
 /* ==========
-COLORS
+1.COLORS
 */
 
 .upper-nav-color, .white-section-color {
@@ -45,8 +58,13 @@ COLORS
     margin: 0 auto;
 }
 
+
+/* ===============================================================
+2.ELEMENTS 
+==================================================================*/
+
 /* ==========
-MAIN-BUTTON
+2.1 MAIN-BUTTON
 */
 
 .btn {
@@ -59,7 +77,7 @@ MAIN-BUTTON
 }
 
 /* ==========
-LOWER-CARD
+2.2 LOWER-CARD
 */
 
 .lower-card {
@@ -98,7 +116,7 @@ LOWER-CARD
 }
 
 /* ==========
-SECTION-DIVIDER
+2.3 SECTION-DIVIDER
 */
 
 .section-divider {
@@ -130,16 +148,45 @@ SECTION-DIVIDER
     }
 }
 
+/* ===============================================================
+3.SECTIONS
+==================================================================*/
 
 /* ==========
-CONTENT-SECTION (Најнови содржини)
+3.1 VIDEO-SECTION
+*/
+
+.vid-row {
+    max-width: 1360px;
+    background-color: blue;
+    margin: 37px auto;
+}
+
+.video-section-container {
+    max-height: 416px;
+}
+
+.prev-video, .next-video {
+    background-color: red;
+    height: 319px;
+    width: 188px;
+}
+
+.middle-video {
+    background-color: red;
+    height: 324px;
+    width: 480px;
+}
+
+
+
+/* ==========
+3.2 SUGGESTED-CONTENT SECTION
 */
 
 .content-row {
-    margin-top: 37px;
     max-width: 1360px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 37px auto;
 }
 
 @media only screen and (min-width: 770px) {
@@ -154,9 +201,10 @@ CONTENT-SECTION (Најнови содржини)
     }
 }
 
+/* ===============================================================
+4.MISCELLANEOUS && TBD
+==================================================================*/
 
-/* NAV HEIGHT - 40px */
-/* SECTION DIVIDER HEIGHT - 63px */
 
 .upper-card {
     width: 237.5px;
