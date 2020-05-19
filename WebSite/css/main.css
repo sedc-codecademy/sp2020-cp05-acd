@@ -113,15 +113,46 @@ SECTION-DIVIDER
     color: #f8ffe4;
 }
 
+@media only screen and (min-width: 2500px) {
+    .section-divider h1 {
+        margin-left: 27vw;
+    }
+}
+@media only screen and (max-width: 1025px) {
+    .section-divider h1 {
+        margin-left: 5vw;
+    }
+}
+
+@media only screen and (min-width: 1900px) and (max-width: 2500px){
+    .section-divider h1 {
+        margin-left: 20vw;
+    }
+}
+
+
+/* ==========
+CONTENT-SECTION (Најнови содржини)
+*/
+
 .content-row {
-    /* justify-content: space-evenly; */
     margin-top: 37px;
+    max-width: 1360px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.content-mid-col {
-    margin-top: calc(55px - 37px);
+@media only screen and (min-width: 770px) {
+    .content-mid-col {
+        margin-top: calc(55px - 37px);
+    }
 }
 
+@media only screen and (max-width: 770px) {
+    .lower-card {
+        margin-bottom: 37px;
+    }
+}
 
 
 /* NAV HEIGHT - 40px */
