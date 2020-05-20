@@ -210,10 +210,15 @@ CONTENTS
     opacity: 50%;
     max-height: 587px;
     background-color: red;
+    position: absolute;
+    left:30vw;
 }
 .text-content {
     background-color: greenyellow;
     display: inline-block;
+    align-self: flex-start;
+    position: relative;
+    top: 15vh;
 }
 
 /* ==========
