@@ -79,7 +79,7 @@ CONTENTS
     border: none;
     font-size: 4rem;
     color: #feffff;
-    opacity: 70%;
+    opacity: 90%;
 }
 
 /* ==========
@@ -443,13 +443,15 @@ CONTENTS
 
 .container-quad {
     margin: 0 auto;
+    position: relative;
+    bottom: 650px;
 }
 
 .upper-card {
     width: 233px;
     height: 298px;
     color: #f2ffff;
-    /* margin: 0 15px; */
+    margin: 0 35px;
 }
 .upper-card:nth-child(odd) {background-color: #2f75d3;}
 .upper-card:nth-child(even) {background-color: #619dee;}
