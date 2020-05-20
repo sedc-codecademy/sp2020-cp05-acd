@@ -448,7 +448,7 @@ CONTENTS
     width: 233px;
     height: 298px;
     color: #f2ffff;
-    margin: 0 15px;
+    /* margin: 0 15px; */
 }
 .upper-card:nth-child(odd) {background-color: #2f75d3;}
 .upper-card:nth-child(even) {background-color: #619dee;}
