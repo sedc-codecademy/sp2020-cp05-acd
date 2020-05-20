@@ -53,13 +53,6 @@ CONTENTS
     background-color: #d1d0d0;
 }
 
-.container-quad {
-    max-width: 950px;
-    max-height: 300px;
-    margin: 0 auto;
-}
-
-
 /* ===============================================================
 2.ELEMENTS 
 ==================================================================*/
@@ -175,7 +168,7 @@ CONTENTS
 }
 
 .text-content p{
-    max-width: 469px;
+    max-width: 700px;
     max-height: 75px;
     overflow: hidden;
     margin: 21px 0;
@@ -198,28 +191,27 @@ CONTENTS
 .upper-section-top {
     background-color: #95bee3;
     height: 587px;
-    /* height should be max-height - idk yet */
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: 0 auto;
 }
 
 .upper-section-top img {
     opacity: 50%;
-    max-height: 587px;
+    height: 700px;
+    width: auto;
     background-color: red;
-    position: absolute;
-    left:30vw;
+    /* margin-left: ; */
+    position: relative;
+    top: 10px;
 }
 .text-content {
     background-color: greenyellow;
-    display: inline-block;
-    align-self: flex-start;
     position: relative;
-    top: 15vh;
+    top: 109px;
 }
+
 
 /* ==========
 3.2 VIDEO SECTION
@@ -341,6 +333,11 @@ CONTENTS
 4.MISCELLANEOUS && TBD
 ==================================================================*/
 
+.container-quad {
+    max-width: 950px;
+    max-height: 300px;
+    margin: 0 auto;
+}
 
 .upper-card {
     width: 237.5px;
