@@ -191,25 +191,22 @@ CONTENTS
 .upper-section-top {
     background-color: #95bee3;
     height: 587px;
-    width: 100%;
     display: flex;
     justify-content: center;
     margin: 0 auto;
 }
 
 .upper-section-top img {
-    opacity: 50%;
+    opacity: 60%;
     height: 700px;
     width: auto;
-    background-color: red;
-    /* margin-left: ; */
     position: relative;
     top: 10px;
 }
 .text-content {
-    background-color: greenyellow;
     position: relative;
     top: 109px;
+    left: 5%;
 }
 
 
