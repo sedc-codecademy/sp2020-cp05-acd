@@ -14,6 +14,8 @@ CONTENTS
     2.1 BUTTONS
     2.2 LOWER-CARD
     2.3 SECTION-DIVIDER
+    2.4 NAVBAR
+    2.5 FOOTER
 3.SECTIONS
     3.1 UPPER SECTION
     3.2 VIDEO SECTION
@@ -79,8 +81,6 @@ CONTENTS
     color: #feffff;
     opacity: 70%;
 }
-
-
 
 /* ==========
 2.2 LOWER-CARD
@@ -154,14 +154,8 @@ CONTENTS
     }
 }
 
-/* ===============================================================
-3.SECTIONS
-==================================================================*/
-
-
-
 /* ==========
-NAVBAR
+2.4 NAVBAR
 */
 
 .navbar_top {
@@ -190,7 +184,6 @@ NAVBAR
     padding-left: 20px;
     color: gray;
 }
-
 
 .navbar_second ul {
     display: flex;
@@ -249,18 +242,46 @@ NAVBAR
     }
 }
 
+/* ==========
+2.5 FOOTER
+*/
+
+.footer {
+    display: flex;
+    background-color: rgb(208, 233, 245);
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+}
+
+@media only screen and (max-width: 450px) {
+    .footer {
+        flex-direction: column;
+        height: 100%;
+    }
+}
 
 
+/* ===============================================================
+3.SECTIONS
+==================================================================*/
 
 /* ==========
 3.1 UPPER SECTION
 */
 
-.upper-section-bottom {
-    background-color: #ffffff;
-    height: 447px;
-    /* height should be max-height - idk yet */
-    width: 100%;
+.upper-section-top {
+    background-color: #95bee3;
+    height: 587px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.text-content {
+    position: relative;
+    top: 109px;
+    left: 5%;
 }
 
 .text-content p{
@@ -284,14 +305,6 @@ NAVBAR
     color: #2f6ec8;
 }
 
-.upper-section-top {
-    background-color: #95bee3;
-    height: 587px;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
-
 .upper-section-top img {
     opacity: 60%;
     height: 700px;
@@ -299,12 +312,13 @@ NAVBAR
     position: relative;
     top: 10px;
 }
-.text-content {
-    position: relative;
-    top: 109px;
-    left: 5%;
-}
 
+.upper-section-bottom {
+    background-color: #ffffff;
+    height: 447px;
+    /* height should be max-height - idk yet */
+    width: 100%;
+}
 
 /* ==========
 3.2 VIDEO SECTION
@@ -419,26 +433,6 @@ NAVBAR
 @media only screen and (max-width: 770px) {
     .lower-card {
         margin-bottom: 37px;
-    }
-}
-
-
-/* ==========
-FOOTER
-*/
-
-.footer {
-    display: flex;
-    background-color: rgb(208, 233, 245);
-    justify-content: space-around;
-    align-items: center;
-    height: 80px;
-}
-
-@media only screen and (max-width: 450px) {
-    .footer {
-        flex-direction: column;
-        height: 100%;
     }
 }
 
