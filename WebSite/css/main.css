@@ -312,6 +312,7 @@ CONTENTS
     width: auto;
     position: relative;
     top: 10px;
+    left: -50px;
 }
 
 .upper-section-bottom {
@@ -447,6 +448,10 @@ CONTENTS
     bottom: 650px;
 }
 
+.container-quad .row {
+    margin: 0;
+}
+
 .upper-card {
     width: 233px;
     height: 298px;
@@ -479,6 +484,18 @@ CONTENTS
     align-items: center;
 }
 
+@media only screen and (max-width: 1024px) {
+    .upper-card-pic {
+        background-color: red;
+    }
+    .upper-card {
+        margin: 0;
+    }
+
+    .text-content {
+        left: 10%;
+    }
+}
 
 
 
