@@ -15,8 +15,9 @@ CONTENTS
     2.2 LOWER-CARD
     2.3 SECTION-DIVIDER
 3.SECTIONS
-    3.1 VIDEO SECTION
-    3.2 SUGGESTED-CONTENT SECTION
+    3.1 UPPER SECTION
+    3.2 VIDEO SECTION
+    3.3 SUGGESTED-CONTENT SECTION
 4.MISCELLANEOUS && TBD
 ==================================================================*/
 
@@ -163,7 +164,60 @@ CONTENTS
 ==================================================================*/
 
 /* ==========
-3.1 VIDEO-SECTION
+3.1 UPPER SECTION
+*/
+
+.upper-section-bottom {
+    background-color: #ffffff;
+    height: 447px;
+    /* height should be max-height - idk yet */
+    width: 100%;
+}
+
+.text-content p{
+    max-width: 469px;
+    max-height: 75px;
+    overflow: hidden;
+    margin: 21px 0;
+    font-weight: 500;
+    text-align: left;
+    line-height: 1.20;
+    color: #ebffff;
+}
+
+.text-content h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #f3fbff;
+}
+
+.text-content h1 span {
+    color: #2f6ec8;
+}
+
+.upper-section-top {
+    background-color: #95bee3;
+    height: 587px;
+    /* height should be max-height - idk yet */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.upper-section-top img {
+    opacity: 50%;
+    max-height: 587px;
+    background-color: red;
+}
+.text-content {
+    background-color: greenyellow;
+    display: inline-block;
+}
+
+/* ==========
+3.2 VIDEO SECTION
 */
 
 .video-section {
@@ -258,7 +312,7 @@ CONTENTS
 }
 
 /* ==========
-3.2 SUGGESTED-CONTENT SECTION
+3.3 SUGGESTED-CONTENT SECTION
 */
 
 .content-row {
