@@ -315,12 +315,12 @@ CONTENTS
     left: -50px;
 }
 
-.upper-section-bottom {
+/* .upper-section-bottom {
     background-color: #ffffff;
     height: 447px;
-    /* height should be max-height - idk yet */
     width: 100%;
-}
+    position: relative;
+} */
 
 /* ==========
 3.2 VIDEO SECTION
@@ -443,9 +443,10 @@ CONTENTS
 ==================================================================*/
 
 .container-quad {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     position: relative;
-    bottom: 650px;
+    bottom: 250px;
+    margin-bottom: -250px;
 }
 
 .container-quad .row {
@@ -497,8 +498,49 @@ CONTENTS
     }
 }
 
+.quad-link-right {
+    width: 700px;
+    height: 380px;
+    margin-left: -110px;
+    padding-top: 40px;
+}
+
+.quad-link-left {
+    width: 450px;
+    height: 380px;
+    margin-left: auto;
+    margin-right: 80px;
+    text-align: left;
+    padding-top: 115px;
+}
+.quad-link-left p{
+    padding-top: 20px;
+}
+
+.quad-links {
+    height: 170px;
+    width: 220px;
+}
+
+.quad-links img {
+    box-shadow: 0 0 20px 14px #c3bbbb;
+    position: relative;
+    opacity: 80%;
+}
+
+.quad-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
+.test {
+    position: absolute;
+    font-size: 2rem;
+    z-index: 2;
+    color: white;
+}
 
 
 h1 {
