@@ -315,16 +315,166 @@ CONTENTS
     left: -50px;
 }
 
-/* .upper-section-bottom {
-    background-color: #ffffff;
-    height: 447px;
-    width: 100%;
+.container-quad {
     position: relative;
-} */
+    bottom: 250px;
+    margin-bottom: -250px;
+}
+
+.container-quad .row {
+    margin: 0;
+}
+
+.upper-card {
+    width: 233px;
+    height: 298px;
+    color: #f2ffff;
+    margin: 0 35px;
+    background-color: #2f75d3;
+}
+
+.upper-card-pic {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upper-card-content h1 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.upper-card-content p {
+    font-size: 12px;
+    max-height: 72px;
+    margin: 26px 12px 44px 16px;
+    font-weight: 500;
+    overflow: hidden;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.quad-link-left {
+    width: 450px;
+    height: 270px;
+    margin-left: auto;
+    margin-right: 80px;
+    text-align: left;
+    padding-top: 115px;
+    overflow: hidden;
+}
+
+.quad-link-left p{
+    padding-top: 20px;
+    height: 270px;
+}
+
+.quad-link-right {
+    width: 700px;
+    height: 380px;
+    margin-left: -110px;
+    padding-top: 40px;
+}
+
+.quad-links {
+    height: 170px;
+    width: 220px;
+}
+
+.quad-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quad-link-titles {
+    position: absolute;
+    font-size: 2rem;
+    z-index: 2;
+    color: white;
+}
+
+.quad-links img {
+    box-shadow: 0 0 20px 14px #c3bbbb;
+    position: relative;
+    opacity: 80%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .upper-card-pic {
+        background-color: red;
+    }
+
+    .upper-card {
+        margin: 0;
+    }
+
+    .text-content {
+        left: 10%;
+    }
+
+    .quad-links {
+        height: 145px;
+    }
+
+    .quad-link-right {
+        width: 600px;
+        height: 380px;
+        margin-left: -120px;
+        padding-top: 60px;
+    }
+
+    .quad-link-left {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .upper-card-pic {
+        background-color: green;
+    }
+
+    .upper-section-top img {
+        height: 500px;
+    }
+
+    .upper-section-top {
+        height: 500px;
+    }
+    
+    .container-quad {
+        left: -50px;
+        bottom: 200px;
+    }
+
+    .upper-card {
+        margin-left: 100px;
+        margin-top: 75px;
+    }
+
+    .quad-link-left {
+        width: 650px;
+        margin-left: 80px;
+        text-align: left;
+        padding-top: 75px;
+    }
+    .quad-link-right {
+        width: 700px;
+        height: 380px;
+        margin-left: 80px;
+        padding-top: 50px;
+    }
+}
 
 /* ==========
 3.2 VIDEO SECTION
 */
+
+.video-section-container {
+    max-height: 416px;
+}
 
 .video-section {
     background-color: #d1d0d0;
@@ -336,25 +486,11 @@ CONTENTS
     margin: 37px auto;
 }
 
-.video-section-container {
-    max-height: 416px;
-}
-
 .prev-video, .next-video {
     height: 319px;
     width: 188px;
     display: flex;
     align-items: center;
-}
-
-.prev-video iframe, .next-video iframe {
-    pointer-events: none;
-}
-
-.middle-video {
-    height: 324px;
-    width: 480px;
-    display: flex;
 }
 
 .prev-video .btn-navigate {
@@ -365,6 +501,16 @@ CONTENTS
 .next-video .btn-navigate {
     position: absolute;
     margin-left: calc(188px - 87px - 13px)
+}
+
+.prev-video iframe, .next-video iframe {
+    pointer-events: none;
+}
+
+.middle-video {
+    height: 324px;
+    width: 480px;
+    display: flex;
 }
 
 .middle-video .btn-navigate {
@@ -441,106 +587,6 @@ CONTENTS
 /* ===============================================================
 4.MISCELLANEOUS && TBD
 ==================================================================*/
-
-.container-quad {
-    /* margin: 0 auto; */
-    position: relative;
-    bottom: 250px;
-    margin-bottom: -250px;
-}
-
-.container-quad .row {
-    margin: 0;
-}
-
-.upper-card {
-    width: 233px;
-    height: 298px;
-    color: #f2ffff;
-    margin: 0 35px;
-}
-.upper-card:nth-child(odd) {background-color: #2f75d3;}
-.upper-card:nth-child(even) {background-color: #619dee;}
-
-.upper-card-content h1 {
-    text-align: center;
-    font-size: 18px;
-}
-
-.upper-card-content p {
-    font-size: 12px;
-    max-height: 72px;
-    margin: 26px 12px 44px 16px;
-    font-weight: 500;
-    overflow: hidden;
-    text-align: left;
-    line-height: 1.5;
-}
-
-.upper-card-pic {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media only screen and (max-width: 1024px) {
-    .upper-card-pic {
-        background-color: red;
-    }
-    .upper-card {
-        margin: 0;
-    }
-
-    .text-content {
-        left: 10%;
-    }
-}
-
-.quad-link-right {
-    width: 700px;
-    height: 380px;
-    margin-left: -110px;
-    padding-top: 40px;
-}
-
-.quad-link-left {
-    width: 450px;
-    height: 380px;
-    margin-left: auto;
-    margin-right: 80px;
-    text-align: left;
-    padding-top: 115px;
-}
-.quad-link-left p{
-    padding-top: 20px;
-}
-
-.quad-links {
-    height: 170px;
-    width: 220px;
-}
-
-.quad-links img {
-    box-shadow: 0 0 20px 14px #c3bbbb;
-    position: relative;
-    opacity: 80%;
-}
-
-.quad-links a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.test {
-    position: absolute;
-    font-size: 2rem;
-    z-index: 2;
-    color: white;
-}
 
 
 h1 {
