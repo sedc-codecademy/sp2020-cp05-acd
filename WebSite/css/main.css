@@ -20,6 +20,7 @@ CONTENTS
     3.1 UPPER SECTION
     3.2 VIDEO SECTION
     3.3 SUGGESTED-CONTENT SECTION
+    3.4 THE NEWEST ARTICLES
 4.MISCELLANEOUS && TBD
 ==================================================================*/
 
@@ -80,6 +81,10 @@ CONTENTS
     font-size: 4rem;
     color: #feffff;
     opacity: 90%;
+}
+
+.button-articles{
+    margin-top: 10px;
 }
 
 /* ==========
@@ -655,6 +660,46 @@ CONTENTS
     .lower-card {
         margin-bottom: 37px;
     }
+}
+
+/* ================================ */
+/* 3.4 THE NEWEST ARTICLES */
+/* ================================ */
+.latest-news-section{
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;    
+}
+
+.latest-news-section-my-cont{
+    padding: 0px 20px;
+    margin: 0 auto;
+    max-width: 1360px;
+}
+
+.latest-news-section-my-row{
+    padding: 5px;
+}
+
+.latest-news-section-my-col{
+    height: 10em;
+    overflow: hidden;
+}
+
+.latest-news-section-my-col img{
+    max-height: 100%;
+    max-width: 100%;
+}
+/* stavam heigh na colonata od buttonot za da ne pravi pomestuvanje od article do article */
+#special{
+    height: 50px;
+}
+.text-bolder{
+    font-weight: 500;
+}
+
+.text--aligner-justify{
+    text-align: justify;
 }
 
 /* ===============================================================
