@@ -465,6 +465,12 @@ CONTENTS
         height: 380px;
         margin-left: 80px;
         padding-top: 50px;
+        margin-bottom: 100px;
+    }
+
+    .quad-links {
+        height: 175px;
+        width: 220px;
     }
 }
 
