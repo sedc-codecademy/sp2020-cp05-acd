@@ -325,12 +325,15 @@ CONTENTS
     margin: 0;
 }
 
-.upper-card {
+.upper-card, .upper-card-light {
     width: 233px;
     height: 298px;
     color: #f2ffff;
     margin: 0 35px;
     background-color: #2f75d3;
+}
+.upper-card-light {
+    background-color: #619dee;
 }
 
 .upper-card-pic {
@@ -403,11 +406,8 @@ CONTENTS
 }
 
 @media only screen and (max-width: 1024px) {
-    .upper-card-pic {
-        background-color: red;
-    }
 
-    .upper-card {
+    .upper-card, .upper-card-light {
         margin: 0;
     }
 
@@ -432,9 +432,6 @@ CONTENTS
 }
 
 @media only screen and (max-width: 768px) {
-    .upper-card-pic {
-        background-color: green;
-    }
 
     .upper-section-top img {
         height: 500px;
@@ -449,7 +446,7 @@ CONTENTS
         bottom: 200px;
     }
 
-    .upper-card {
+    .upper-card, .upper-card-light {
         margin-left: 100px;
         margin-top: 75px;
     }
@@ -474,10 +471,7 @@ CONTENTS
 }
 
 @media only screen and (max-width: 425px) {
-    .upper-card-pic {
-        background-color: yellow;
-    }
-
+    
     .text-content {
         top: 50px;
         width: 75%;
@@ -503,18 +497,48 @@ CONTENTS
     }
 
     .quad-link-left {
-        width: 350px;
+        max-width: 350px;
         margin-left: 80px;
         padding-top: 75px;
     }
 
     .quad-link-right {
-        width: 400px;
+        max-width: 400px;
         margin-left: 50px;
+        padding-top: 60px;
+        margin-bottom: 260px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+    .quad-link-left {
+        max-width: 300px;
+        padding-top: 75px;
+    }
+    .quad-link-right {
+        max-width: 350px;
         padding-top: 60px;
         margin-bottom: 240px;
     }
+}
 
+@media only screen and (max-width: 320px) {
+
+    .upper-section-top img {
+        height: 450px;
+        left: 75px;
+    }
+    .quad-link-left {
+        max-width: 260px;
+        height: 275px;
+        padding-top: 75px;
+    }
+    .quad-link-right {
+        max-width: 300px;
+        padding-top: 60px;
+        margin-bottom: 200px;
+    }
 }
 
 /* ==========
