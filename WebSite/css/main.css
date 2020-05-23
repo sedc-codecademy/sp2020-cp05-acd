@@ -763,6 +763,9 @@ CONTENTS
 4.MISCELLANEOUS && TBD
 ==================================================================*/
 
+.disable-select {
+    user-select: none;
+}
 
 h1 {
     font-size: 24px;
