@@ -593,10 +593,6 @@ CONTENTS
 3.2 VIDEO SECTION
 */
 
-.video-section-container {
-    /* max-height: 416px; */
-}
-
 .video-section {
     background-color: #d1d0d0;
     padding-bottom: 1px;
@@ -612,6 +608,7 @@ CONTENTS
     width: 188px;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .prev-video .btn-navigate {
@@ -626,6 +623,7 @@ CONTENTS
 
 .prev-video iframe, .next-video iframe {
     pointer-events: none;
+    
 }
 
 .middle-video {

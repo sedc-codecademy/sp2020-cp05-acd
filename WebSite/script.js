@@ -4,6 +4,8 @@ VIDEO SECTION
 
 const prevBtn = document.getElementById("prev_btn");
 const nextBtn = document.getElementById("next_btn");
+const prevBtnXs = document.getElementById("prev_btn_xs");
+const nextBtnXs = document.getElementById("next_btn_xs");
 
 const prevVid = document.getElementById("prev_video");
 const midVid = document.getElementById("mid_video");
@@ -79,3 +81,14 @@ nextBtn.addEventListener("click", function() {
 prevBtn.addEventListener("click", function() {
     iterate("-")
 })
+
+nextBtnXs.addEventListener("click", function() {
+    iterate("+")
+})
+
+prevBtnXs.addEventListener("click", function() {
+    iterate("-")
+})
+
+
+
