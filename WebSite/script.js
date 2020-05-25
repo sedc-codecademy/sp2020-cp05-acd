@@ -2,91 +2,90 @@
 VIDEO SECTION
 */
 
-const prevBtn = document.getElementById("prev_btn");
-const nextBtn = document.getElementById("next_btn");
-const prevBtnXs = document.getElementById("prev_btn_xs");
-const nextBtnXs = document.getElementById("next_btn_xs");
+const videoSec = {
+    prevBtn : document.getElementById("prev_btn"),
+    nextBtn : document.getElementById("next_btn"),
+    prevBtnXs : document.getElementById("prev_btn_xs"),
+    nextBtnXs : document.getElementById("next_btn_xs"),
+    prevVid : document.getElementById("prev_video"),
+    midVid : document.getElementById("mid_video"),
+    nextVid : document.getElementById("next_video"),
+    videoList : [
+        "https://www.youtube.com/embed/wmOW091P2ew",
+        "https://www.youtube.com/embed/X9ivR4y03DE",
+        "https://www.youtube.com/embed/wZAjVQWbMlE",
+        "https://www.youtube.com/embed/UznxKiHrNx4"
+    ],
+    prevIterate : 0,
+    midIterate : 1,
+    nextIterate : 2
+}
 
-const prevVid = document.getElementById("prev_video");
-const midVid = document.getElementById("mid_video");
-const nextVid = document.getElementById("next_video");
-
-const videoList = [
-    "https://www.youtube.com/embed/wmOW091P2ew",
-    "https://www.youtube.com/embed/X9ivR4y03DE",
-    "https://www.youtube.com/embed/wZAjVQWbMlE",
-    "https://www.youtube.com/embed/UznxKiHrNx4"
-]
-
-let prevIterate = 0;
-let midIterate = 1;
-let nextIterate = 2;
-
-prevVid.setAttribute("src", videoList[prevIterate]);
-midVid.setAttribute("src", videoList[midIterate]);
-nextVid.setAttribute("src", videoList[nextIterate]);
+videoSec.prevVid.setAttribute("src", videoSec.videoList[videoSec.prevIterate])
+videoSec.midVid.setAttribute("src", videoSec.videoList[videoSec.midIterate])
+videoSec.nextVid.setAttribute("src", videoSec.videoList[videoSec.nextIterate])
 
 function iterate(mod) {
     if (mod === "+") {
-        prevIterate++
-        midIterate++
-        nextIterate++  
-        if (prevIterate < 0 ) {
-            prevIterate = 0
-        } else if (prevIterate > videoList.length - 1) {
-            prevIterate = 0
+        videoSec.prevIterate++
+        videoSec.midIterate++
+        videoSec.nextIterate++  
+        if (videoSec.prevIterate < 0 ) {
+            videoSec.prevIterate = 0
+        } else if (videoSec.prevIterate > videoSec.videoList.length - 1) {
+            videoSec.prevIterate = 0
         }
-        prevVid.setAttribute("src", videoList[prevIterate])
-        if (midIterate < 0 ) {
-            midIterate = 0
-        } else if (midIterate > videoList.length - 1) {
-            midIterate = 0
+        videoSec.prevVid.setAttribute("src", videoSec.videoList[videoSec.prevIterate])
+        if (videoSec.midIterate < 0 ) {
+            videoSec.midIterate = 0
+        } else if (videoSec.midIterate > videoSec.videoList.length - 1) {
+            videoSec.midIterate = 0
         }
-        midVid.setAttribute("src", videoList[midIterate])
-        if (nextIterate < 0 ) {
-            nextIterate = 0
-        } else if (nextIterate > videoList.length - 1) {
-            nextIterate = 0
+        videoSec.midVid.setAttribute("src", videoSec.videoList[videoSec.midIterate])
+        if (videoSec.nextIterate < 0 ) {
+            videoSec.nextIterate = 0
+        } else if (videoSec.nextIterate > videoSec.videoList.length - 1) {
+            videoSec.nextIterate = 0
         }
-        nextVid.setAttribute("src", videoList[nextIterate])
+        videoSec.nextVid.setAttribute("src", videoSec.videoList[videoSec.nextIterate])
     } else if (mod === "-") {
-        prevIterate--
-        midIterate--
-        nextIterate--
-        if (prevIterate < 0 ) {
-            prevIterate = videoList.length - 1
-        } else if (prevIterate > videoList.length - 1) {
-            prevIterate = videoList.length - 1
+        videoSec.prevIterate--
+        videoSec.midIterate--
+        videoSec.nextIterate--
+        if (videoSec.prevIterate < 0 ) {
+            videoSec.prevIterate = videoSec.videoList.length - 1
+        } else if (videoSec.prevIterate > videoSec.videoList.length - 1) {
+            videoSec.prevIterate = videoSec.videoList.length - 1
         }
-        prevVid.setAttribute("src", videoList[prevIterate])
-        if (midIterate < 0 ) {
-            midIterate = videoList.length - 1
-        } else if (midIterate > videoList.length - 1) {
-            midIterate = videoList.length - 1
+        videoSec.prevVid.setAttribute("src", videoSec.videoList[videoSec.prevIterate])
+        if (videoSec.midIterate < 0 ) {
+            videoSec.midIterate = videoSec.videoList.length - 1
+        } else if (videoSec.midIterate > videoSec.videoList.length - 1) {
+            videoSec.midIterate = videoSec.videoList.length - 1
         }
-        midVid.setAttribute("src", videoList[midIterate])
-        if (nextIterate < 0 ) {
-            nextIterate = videoList.length - 1
-        } else if (nextIterate > videoList.length - 1) {
-            nextIterate = videoList.length - 1
+        videoSec.midVid.setAttribute("src", videoSec.videoList[videoSec.midIterate])
+        if (videoSec.nextIterate < 0 ) {
+            videoSec.nextIterate = videoSec.videoList.length - 1
+        } else if (videoSec.nextIterate > videoSec.videoList.length - 1) {
+            videoSec.nextIterate = videoSec.videoList.length - 1
         }
-        nextVid.setAttribute("src", videoList[nextIterate])
+        videoSec.nextVid.setAttribute("src", videoSec.videoList[videoSec.nextIterate])
     }
 }
 
-nextBtn.addEventListener("click", function() {
+videoSec.nextBtn.addEventListener("click", function() {
     iterate("+")
 })
 
-prevBtn.addEventListener("click", function() {
+videoSec.prevBtn.addEventListener("click", function() {
     iterate("-")
 })
 
-nextBtnXs.addEventListener("click", function() {
+videoSec.nextBtnXs.addEventListener("click", function() {
     iterate("+")
 })
 
-prevBtnXs.addEventListener("click", function() {
+videoSec.prevBtnXs.addEventListener("click", function() {
     iterate("-")
 })
 
