@@ -84,7 +84,7 @@
         </ul>
     </div>
 <!-- Top section -->
-    <section>
+    <section class="disable-select">
         <div class="container upper-section-top">
             <div class="row justify-content-center upper-section-top-row">
                 <div class="col-sm-6 text-content-col">
@@ -107,10 +107,8 @@
         <div class="upper-section-bottom"> 
         </div>
     </section>
-
-<!-- 4 kartici -->
 <!-- try something different -->
-    <div class="container container-quad">
+    <div class="container container-quad disable-select">
         <div class="row justify-content-center">
             <div class="col-flex-3">
                 <div class="upper-card">
@@ -211,9 +209,7 @@
             </div>
         </div>
     </div>
-
-     <!-- latest news section-->
-    
+<!-- latest news section-->
     <section class="latest-news-section"> 
         <div class="section-divider">
             <h1>Најнова содржина</h1>
@@ -292,7 +288,7 @@
         </article>
     </section>
 <!-- Видеа -->
-    <section class="video-section">
+    <section class="video-section disable-select">
         <div class="section-divider">
             <h1>
                 Видеа
@@ -302,27 +298,27 @@
             <div class="row justify-content-around video-row">
                 <div class="col-flex align-self-center">
                     <div class="prev-video">
-                        <iframe src="https://www.youtube.com/embed/kzHIs7j1CCs" width="100%" height="100%"></iframe>
-                        <button class="btn-navigate">
+                        <iframe src="" width="100%" height="140%" id="prev_video"></iframe>
+                        <button class="btn-navigate" id="prev_btn">
                             <
                         </button>
                     </div>
                 </div>
-                <div class="col-flex">
+                <div class="col-flex align-self-center">
                     <div class="middle-video">
-                        <button class="btn-navigate">
+                        <button class="btn-navigate" id="prev_btn_xs">
                             <
                         </button>
-                        <iframe src="https://www.youtube.com/embed/kzHIs7j1CCs" width="100%" height="100%"></iframe>
-                        <button class="btn-navigate btn-navigate-right">
+                        <iframe src="" width="100%" height="100%" id="mid_video"></iframe>
+                        <button class="btn-navigate btn-navigate-right" id="next_btn_xs">
                             >
                         </button>
                     </div>
                 </div>
                 <div class="col-flex align-self-center">
                     <div class="next-video">
-                        <iframe src="https://www.youtube.com/embed/kzHIs7j1CCs" width="100%" height="100%"></iframe>
-                        <button class="btn-navigate">
+                        <iframe src="" width="100%" height="140%" id="next_video"></iframe>
+                        <button class="btn-navigate" id="next_btn">
                             >
                         </button>
                     </div>
@@ -331,7 +327,7 @@
         </div>
     </section>
 <!-- Предложени содржини -->
-    <section>
+    <section class="disable-select">
         <div class="section-divider">
             <h1>
                 Предложени содржини
