@@ -3,390 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6e85bc6262.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="style.css">
     <title>Home</title>
 </head>
-<body>
-<!-- Header-Navbar -->
-    <div class=" container navbar_top">
-        <div class="sec sec1">
-            <a href="#"><img src="img/42894646_1391007314367518_5812454356359839744_n.jpg" alt="ИНСУЛИНСКАПОРТА.МК"></a>
-            <p>ИНСУЛИНСКАПОРТА.МК</p>
+<body id="body">
+    <header class="fixed">
+        <div class="upper-nav">
+            <div class="container container-max container-nav">
+                <a href="#" class="logo-link first-logo">
+                    <img src="images/insulinskaporta.jpg" alt="site-logo">
+                    <h3>insulinskaporta.mk</h3>
+                </a>
+                <a href="#" class="logo-link second-logo">
+                    <img src="images/logo.jpg" alt="logo">
+                    <p>Асоцијација за детски дијабетес на Македонија - БАЛАНС МК</p>
+                </a>
+                <div class="log-in">
+                    <a href="#" id="about-us">За нас</a>
+                    <a href="#" id="profile">Профил</a>
+                </div>
+                <input type="text" class="search-bar">
+                <div class="media-upper-nav">
+                    <a href="#"><img class="fb" src="images/facebook.png" alt="facebook link"></a>
+                    <a href="#"><img src="images/twitter.png" alt=""></a>
+                </div>
+            </div>
         </div>
-        <div class="sec sec2">
-            <a href="#"><img src="img/42894646_1391007314367518_5812454356359839744_n.jpg" alt="Асоцијација за детски дијабетес на Македонија - БАЛАНС МК"></a>
-            <p>Асоцијација за детски дијабетес на Македонија - БАЛАНС МК</p>
+        <div class="lower-nav">
+            <div class="container container-max container-nav">
+                <label for="burger-bar" class="burger-label" id="burger-label">
+                    <i class="fas fa-bars fa-3x burger-label"></i>
+                </label>
+                <input type="checkbox" id="burger-bar">
+                <nav>
+                    <ul>
+                        <li class="nav-item first-item" id="first-item">    
+                            <p class="drop-btn">Вести <span class="arrow"><i class="fas fa-chevron-down rotate"></i></span></p>  
+                            <ul class="drop-content" id="first-drop">
+                                <li><a href="#">Вести</a></li>
+                                <li><a href="#">Вести</a></li>
+                                <li><a href="#">Вести</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" id="second-item">
+                            <p class="drop-btn">Проекти и иницијативи <span class="arrow"><i class="fas fa-chevron-down rotate"></i></span></p> 
+                            <ul class="drop-content" id="second-drop">
+                                <li><a href="#">Проекти и иницијативи</a></li>
+                                <li><a href="#">Проекти и иницијативи</a></li>
+                                <li><a href="#">Проекти и иницијативи</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" id="third-item">
+                            <p class="drop-btn">Едyкација <span class="arrow"><i class="fas fa-chevron-down rotate"></i></span></p> 
+                            <ul class="drop-content" id="third-drop">
+                                <li><a href="#">Едyкација</a></li>
+                                <li><a href="#">Едyкација</a></li>
+                                <li><a href="#">Едyкација</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" id="fourth-item">
+                            <p class="drop-btn">Исхрана <span class="arrow"><i class="fas fa-chevron-down rotate"></i></span></p> 
+                            <ul class="drop-content" id="fourth-drop">
+                                <li><a href="#">Исхрана</a></li>
+                                <li><a href="#">Исхрана</a></li>
+                                <li><a href="#">Исхрана</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" id="fifth-item">
+                            <p class="drop-btn">Светски искуства и новитети <span class="arrow"><i class="fas fa-chevron-down rotate"></i></span></p> 
+                            <ul class="drop-content" id="fifth-drop">
+                                <li><a href="#">Светски искуства и новитети</a></li>
+                                <li><a href="#">Светски искуства и новитети</a></li>
+                                <li><a href="#">Светски искуства и новитети</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown-tomerge" id="sixth-item">
+                            <p class="drop-btn">Тип 1 <span class="arrow"><i class="fas fa-chevron-down rotate"></i></span></p> 
+                            <ul class="drop-content" id="sixth-drop">
+                                <li><a href="#">Тип 1</a></li>
+                                <li><a href="#">Тип 1</a></li>
+                                <li><a href="#">Тип 1</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown-tomerge" id="seventh-item">
+                            <p class="drop-btn">Тип 2 <span class="arrow"><i class="fas fa-chevron-down rotate"></i></span></p> 
+                            <ul class="drop-content" id="seventh-drop">
+                                <li><a href="#">Светски искуства и новитети</a></li>
+                                <li><a href="#">Светски искуства и новитети</a></li>
+                                <li><a href="#">Светски искуства и новитети</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown-merged" id="eighth-item">
+                            <p class="drop-btn">Тип 1/2 <span class="arrow"><i class="fas fa-chevron-down rotate"></i></span></p> 
+                            <ul class="drop-content" id="eighth-drop">
+                                <li><a href="#">Светски искуства и новитети</a></li>
+                                <li><a href="#">Светски искуства и новитети</a></li>
+                                <li><a href="#">Светски искуства и новитети</a></li>
+                                <li><a href="#">Светски искуства и новитети</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-empty">
+                            <a class="drop-btn dropdown-tomerge" href="#">Прашања/Одговори</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="drop-btn dropdown-merged" href="#">П/О</a> 
+                        </li>
+                        <li class="media-lower-nav">
+                            <a href="#"><img class="fb" src="images/facebook.png" alt="facebook link"></a>
+                            <a href="#"><img src="images/twitter.png" alt=""></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="sec sec3">
-            <a href="#">За Нас</a>
-            <a href="#">Профил</a>
-            <a href="#"><img src="img/iconfinder_facebook_circle_gray_107140.png"></a>
-            <a href="#"><img src="img/iconfinder_twitter_circle_gray_107135.png"></a>
+    </header>
+    
+    <main>
+
+        <div class="background">
+            <img src="images/child.png" alt="child">
         </div>
-    </div>
-    <div class="container navbar_second nav-color">
-        <ul>
-            <li class="dropdown"><a href="#">Вести</a>
-                <ul>
-                    <li><a href="#">Текст</a></li>
-                    <li><a href="#">Текст</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#">Проекти и иницијативи</a>
-                <ul>
-                    <li><a href="#">Текст</a></li>
-                    <li><a href="#">Текст</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#">Едукација</a>
-                <ul>
-                    <li><a href="#">Текст</a></li>
-                    <li><a href="#">Текст</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#">Исхрана</a>
-                <ul >
-                    <li><a href="#">Текст</a></li>
-                    <li><a href="#">Текст</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#">Светски искуства и новитети</a>
-                <ul >
-                    <li><a href="#">Текст</a></li>
-                    <li><a href="#">Текст</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#">Тип1</a>
-                <ul >
-                    <li><a href="#">Текст</a></li>
-                    <li><a href="#">Текст</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#">Тип2</a>
-                <ul >
-                    <li><a href="#">Текст</a></li>
-                    <li><a href="#">Текст</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#">Прашања/Одговори</a>
-                <ul >
-                    <li><a href="#">Текст</a></li>
-                    <li><a href="#">Текст</a></li>
-                </ul>
-            </li>
-            <li class="dropdown dsearch"><a href="#">&#128269</a>
-                <ul >
-                    <input class="search" type="search" placeholder="Search" aria-label="Search">
-                </ul>
-            </li>
-        </ul>
-    </div>
-<!-- Top section -->
-    <section class="disable-select">
-        <div class="container upper-section-top">
-            <div class="row justify-content-center upper-section-top-row">
-                <div class="col-sm-6 text-content-col">
-                    <div class="text-content">
-                        <h1> <span>covid-19</span> и дијабетес</h1>
+
+        <div class="container container-max container-main">
+
+            <div class="featured-content">
+                <h1><span>COVID-19</span> и дијабетес</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae veritatis nulla ea. Suscipit provident cum ullam nostrum. Unde accusantium nulla possimus, minima voluptate nihil rerum, labore obcaecati enim, blanditiis nam.
+                </p>
+                <a href="#" class="btn">Дознај повеќе</a>
+            </div>
+
+            <div class="card-content">
+                <div class="featured-card">
+                    <div class="featured-img">
+                        <i class="fas fa-weight fa-3x"></i>
+                    </div>
+                    <div class="featured-text">
+                        <h3>Lorem ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consectetur earum ut, vero perspiciatis veniam.</p>
+                    </div>
+                </div>
+                <div class="featured-card-light">
+                    <div class="featured-img">
+                        <i class="fas fa-apple-alt fa-3x"></i>
+                    </div>
+                    <div class="featured-text">
+                        <h3>Lorem ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ducimus explicabo ab numquam accusantium atque possimus</p>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-img">
+                        <i class="fas fa-user-friends fa-3x"></i>
+                    </div>
+                    <div class="featured-text">
+                        <h3>Lorem ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ducimus explicabo ab numquam accusantium atque possimus</p>
+                    </div>
+                </div>
+                <div class="featured-card-light last-card">
+                    <div class="featured-img">
+                        <i class="fas fa-capsules fa-3x"></i>
+                    </div class="featured-text">
+                    <div class="featured-text">
+                        <h3>Lorem ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ducimus explicabo ab numquam accusantium atque possimus</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="other-content">
+                <div class="other-article">
+                    <h2>Пробај нешто поинакво</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi voluptas aspernatur porro dolore nostrum impedit quaerat dicta repudiandae. Hic veritatis commodi aliquid vitae possimus veniam, tenetur inventore ut neque?</p>
+                </div>
+                <div class="other-images">
+                    <div class="other-image top-left shadow">
+                        <a href="#"><h3>Тип 1</h3></a>
+                    </div>
+                    <div class="other-image top-right shadow">
+                        <a href="#"><h3>Новитети</h3></a>
+                    </div>
+                    <div class="other-image bottom-left shadow">
+                        <a href="#"><h3>Исхрана </h3></a>
+                    </div>
+                    <div class="other-image bottom-right shadow">
+                        <a href="#"><h3>Тип 2</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider">
+                <div class="container container-max">
+                    <h2 class="divider-text">Најнови содржини</h2>
+                </div>
+            </div>
+               
+            <div class="new-content">
+                <div class="new-upper">
+                    <img class="shadow" src="images/injection.png" alt="insulin injection">
+                    <div class="new-text">
+                        <h2>Lorem ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis animi culpa blanditiis. Voluptas, dolorem, earum delectus aliquam porro rerum eos totam natus temporibus, inventore sapiente qui est eveniet facere incidunt.</p>
+                        <a href="#" class="btn">Дознај повеќе</a>
+                    </div>
+                </div>
+
+                <div class="new-lower">
+                    <img class="shadow" src="images/sugar.png" alt="sugar cubes">
+                    <div class="new-text">
+                        <h2>Lorem ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis animi culpa blanditiis. Voluptas, dolorem, earum delectus aliquam porro rerum eos totam natus temporibus, inventore sapiente qui est eveniet facere incidunt.</p>
+                        <a href="#" class="btn">Дознај повеќе</a>
+                    </div>  
+                </div>
+            </div>
+            
+            <div class="divider">
+                <div class="container container-max">
+                    <h2 class="divider-text">Видеа</h2>
+                </div>
+            </div>
+
+            <div class="video-content">
+                <div class="video-previous-wrap">
+                    <iframe class="video-previous slide-right" id="video-previous"  frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-next-wrap">
+                    <iframe class="video-next" id="video-next"  frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-featured">
+                    <div class="video-wrap" id="center-wrap">
+                        <button class="video-btn btn-left" id="btn-left"><i class="fas fa-chevron-left"></i></button>
+                        <button class="video-btn btn-right" id="btn-right"><i class="fas fa-chevron-right"></i></button>
+                        <iframe class="video-center" id="video-center"  frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider">
+                <div class="container container-max">
+                    <h2 class="divider-text">Предложени содржини</h2>
+                </div>
+            </div>
+
+            <div class="suggested-content">
+                <div class="suggested-card shadow">
+                    <img src="images/virus-placeholder.png" alt="virus-image">
+                    <div>
+                        <h3>Lorem ipsum</h3>
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus itaque fuga cumque molestiae, qui, facere dicta dolore nulla ratione dignissimos nostrum. Tenetur illum in obcaecati eum animi maxime aliquam, delectus iste ea natus aspernatur quae repellat illo esse voluptas numquam nihil? Nostrum velit maxime ullam?              
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus itaque fuga cumque molestiae, qui, facere dicta dolore nulla ratione dignissimos nostrum. Tenetur illum in obcaecati eum animi maxime aliquam, delectus iste ea natus aspernatur quae repellat illo esse voluptas numquam nihil? Nostrum velit maxime ullam?              
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, magnam?
                         </p>
-                        <button class="btn">
-                            Дознај повеќе
-                        </button>
+                        <a href="#" class="btn">Дознај повеќе</a>
                     </div>
                 </div>
-                <div class="col-sm-6 upper-section-img-col">
-                    <img src="img/remove.png" alt="child picture">
-                </div>
-            </div>
-        </div>
-        <div class="upper-section-bottom"> 
-        </div>
-    </section>
-<!-- try something different -->
-    <div class="container container-quad disable-select">
-        <div class="row justify-content-center">
-            <div class="col-flex-3">
-                <div class="upper-card">
-                    <div class="upper-card-pic">
-                        <i class="fas fa-user-nurse fa-3x"></i>
-                    </div>
-                    <div class="upper-card-content">
-                        <h1>Lorem ipsum</h1>
+                <div class="suggested-card shadow middle-card">
+                    <img src="images/dawn.png" alt="happy children at dawn">
+                    <div>
+                        <h3>Lorem ipsum</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam hic dolorum, perferendis impedit laboriosam saepe excepturi veniam repudiandae! Rerum blanditiis omnis expedita eaque dolores porro est impedit, repudiandae odio incidunt?
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, magnam?
                         </p>
+                        <a href="#" class="btn">Дознај повеќе</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-flex-3">
-                <div class="upper-card-light">
-                    <div class="upper-card-pic">
-                        <i class="fas fa-user-nurse fa-3x"></i>
-                    </div>
-                    <div class="upper-card-content">
-                        <h1>Lorem ipsum</h1>
+                <div class="suggested-card shadow">
+                    <img src="images/measurement.png" alt="blood sugar measurement">
+                    <div>
+                        <h3>Lorem ipsum</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam hic dolorum, perferendis impedit laboriosam saepe excepturi veniam repudiandae! Rerum blanditiis omnis expedita eaque dolores porro est impedit, repudiandae odio incidunt?
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, magnam?
                         </p>
+                        <a href="#" class="btn">Дознај повеќе</a>
                     </div>
                 </div>
             </div>
-            <div class="col-flex-3">
-                <div class="upper-card">
-                    <div class="upper-card-pic">
-                        <i class="fas fa-user-nurse fa-3x"></i>
-                    </div>
-                    <div class="upper-card-content">
-                        <h1>Lorem ipsum</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam hic dolorum, perferendis impedit laboriosam saepe excepturi veniam repudiandae! Rerum blanditiis omnis expedita eaque dolores porro est impedit, repudiandae odio incidunt?
-                        </p>
-                    </div>
+
+        </div>
+
+    </main>
+   
+    <footer class="fixed-footer">
+        <div class="container container-max container-footer">
+            <div class="footer-contact">
+                <div>
+                    <h3>Контакт</h3>
+                </div>
+                <div>
+                    <a href="#">
+                        <i class="fas fa-phone-alt"></i> 
+                        <p>Lorem ipsum dolor sit.</p>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-envelope"></i>
+                        <p>Lorem, ipsum dolor.</p>
+                    </a>
                 </div>
             </div>
-            <div class="col-flex-3">
-                <div class="upper-card-light">
-                    <div class="upper-card-pic">
-                        <i class="fas fa-user-nurse fa-3x"></i>
-                    </div>
-                    <div class="upper-card-content">
-                        <h1>Lorem ipsum</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam hic dolorum, perferendis impedit laboriosam saepe excepturi veniam repudiandae! Rerum blanditiis omnis expedita eaque dolores porro est impedit, repudiandae odio incidunt?
-                        </p>
-                    </div>
+            <div>
+                <div class="footer-media">
+                    <a href="#" class="donate-btn"> <span><i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i></span>Донирај</a>
+                    <a href="#"><img class="fb" src="images/facebook.png" alt="facebook link"></a>
+                    <a href="#"><img src="images/twitter.png" alt=""></a>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center quad-link-row">
-            <div class="col-lg-5">
-                <div class="quad-link-left">
-                        <h1>Пробај нешто поинакво</h1>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, hic quos. Dolore laborum architecto est ad, aliquid doloribus commodi soluta voluptate error, fugit facilis ipsam nisi obcaecati veniam, animi unde perferendis reprehenderit tempore placeat blanditiis? Voluptas itaque repellat facilis. Commodi!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, laborum odit eaque excepturi possimus ipsum temporibus inventore repudiandae recusandae. Nostrum quisquam laborum rerum aspernatur. Consequuntur facere earum maiores aperiam nihil?
-                        </p>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <div class="quad-link-right">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-5 col-9 quad-links"> 
-                                <a href="">
-                                    <h1 class="quad-link-titles">Тип 1</h1>
-                                    <img src="img/placehold.jpg" alt="#"> 
-                                </a>           
-                            </div>
-                            <div class="col-md-5 col-9 quad-links">
-                                <a href=""> 
-                                    <h1 class="quad-link-titles">Новитети</h1>
-                                    <img src="img/placehold.jpg" alt="#"> 
-                                </a>     
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-5 col-9 quad-links">
-                                <a href=""> 
-                                    <h1 class="quad-link-titles">Исxрана</h1>
-                                    <img src="img/placehold.jpg" alt="#"> 
-                                </a>    
-                            </div>
-                            <div class="col-md-5 col-9 quad-links">
-                                <a href=""> 
-                                    <h1 class="quad-link-titles">Тип 2</h1>
-                                    <img src="img/placehold.jpg" alt="#"> 
-                                </a>   
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- latest news section-->
-    <section class="latest-news-section"> 
-        <div class="section-divider">
-            <h1>Најнова содржина</h1>
-        </div>    
-            <div class="container latest-news-section-my-cont">
-                <div class="row latest-news-section-my-row">
-                    <div class="col-xs-12 col-sm-6 col-md-4 latest-news-section-my-col">
-                        <img src="img/woman_with_mask.gif" alt="woman_with_mask_corona" width="500px">
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-8 latest-news-section-my-col text--aligner-justify">
-                        <p><span class="text-bolder">Анкетата спроведена со мал број на луѓе со дијабетес на Форумот за дијабетичари покажа дека 4 од 10 лица активно носат маска кога излегуваат.</span>    
-                            Резултатите доаѓаат откако луѓето во Англија сега се советуваат да носат облоги за лице на затворени простори за да се заштитат од ширењето и ризикот од инфекција на СОВИД-19. На луѓето во Шкотска веќе им се препорачува да носат маски кога се во продавници и во јавниот превоз.
-                                На луѓето во Англија им се советува да носат маска кога:
-                                На јавниот превоз и во некои продавници
-                            Во други „затворени места каде што социјалното растојание не е секогаш можно“ и „тие доаѓаат во контакт со други што не ги исполнуваат нормално“
-                            Од луѓето не се бара да носат маска кога:
-                            
-                            Вежбање
-                            Надвор
-                            На училиште
-                            На работни места како канцеларии и продавници
-                            Деца под 2 години и деца на возраст од основно училиште кои не можат да користат маски без помош, исто така не треба да носат маска.
-                            
-                            Од испитаните 170 лица, 44% потврдија дека носат маска кога излегуваат надвор, со дополнителни 16% размислуваат дали да излезат маска при излегување. Советодавните состојби треба да се носат на облоги наместо хируршки маски или респиратори, кои треба да бидат оставени за здравствениот персонал и луѓето на кои им е потребна.
-                            
-                            Нешто помалку од 4 на 10 лица (39%) изјавиле дека не носат маска кога излегуваат.
-                        </p>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-8 offset-sm-6 offset-md-4 latest-news-section-my-col" id="special">
-                        <button type="button" class="btn button-articles" id="button-articles">Дознај повеќе</button>
-                    </div>
-                </div>
-            </div>
-        <article>
-            <div class="container latest-news-section-my-cont"> 
-                <div class="row latest-news-section-my-row">
-                    <div class="col-xs-12 col-sm-6 order-sm-6 col-md-4 latest-news-section-my-col ">
-                        <img src="img/treatment.gif" alt="virus_photo" width="500px">
-                    </div>
-                    <div class="col-xs-12 col-sm-6 order-sm-1 col-md-8 latest-news-section-my-col text--aligner-justify" id="latest-news-section-my-col--margin">
-                        <p>
-                            <span class="text-bolder">Новинарот напиша:</span> „Фармацевтската индустрија има поголем интерес за отров, бидејќи некои компании се одлучуваат да се вратат на откритието на лекови инспирирани од природни соединенија, тренд што не падна во мода пред околу 40 години“.
-
-                                За написот, таа интервјуираше низа истражувачи за медицинската работа што ја вршеле, што вклучува отров и како може да се користи за да им користи позитивно на болните луѓе.
-
-                                Еден од најголемите достигнувања во последниве години е пронаоѓањето на отровот од морскиот конус полжав што може да помогне во понудата на третман за дијабетес.
-
-                                Нормално што се наоѓа во тропските и суптропските мориња, животното пленува на мали риби со ослободување на облак од инсулин што го крши нивото на шеќер во крвта.
-
-                                Биологот и биохемичар д-р Хелена Сафави на Универзитетот во Копенхаген во Данска го водеше обвинението во истражувањето и откри дека инсулинот на полжавот делува во секунди врз рецепторот на човечки инсулин.
-
-                                Таа рече: „Во текот на последните неколку години се чувствуваше како да се наметнува назад кон природните производи“.
-
-                                Иако отровот на полжавот е смртоносен кај рибите, д-р Сафави смета дека инсулинот со брзо дејство на полжавот може да претставува основа за нови лекови за дијабетес.
-
-                                Работејќи во партнерство со американската биотехнолошка компанија Монолог, таа неодамна лиценцираше соединение кое се базираше на отровот на полжавот и се развива за клинички испитувања.
-
-                                Друго морско суштество инспирираше да се направи лек за третман на дијабетес тип 1 и други автоимуни состојби како лупус, воспалително заболување на цревата, псоријаза и мултиплекс склероза.
-
-                                Далазатид се заснова на анемонот на сонцето на Карибите, кој има незгоден убод кој содржи пептид наречен Ш.К.
-
-                                Се смета дека овој пептид работи со блокирање на калиумски канал, кој е вклучен во развојот на автоимуни нарушувања.
-
-                                Имунологот д-р Мајкл Кахалан од Универзитетот во Калифорнија рече: „Стаорците инјектирани со ШК изгледаат совршено добро. Тие трчаат наоколу и шмркаат едни со други и се вклучуваат во нормално однесување на стаорци “.
-
-                                Неговите откритија се резултат на повеќе од 30 години работа, каде неговиот тим создаде рачно изработена верзија на Ш.К.
-
-                                Написот заклучува дека истражувањето на истражувањето на отровот се зголемува и со повеќе од 220.000 животински видови за кои се знае дека се отровни, има уште многу работа.
-                        </p>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 order-sm-12 col-md-8  latest-news-section-my-col" id="special">
-                        <button type="button" class="btn button-articles" id="button-articles">Дознај повеќе</button>
-                    </div>
-                </div>                    
-            </div>
-        </article>
-    </section>
-<!-- Видеа -->
-    <section class="video-section disable-select">
-        <div class="section-divider">
-            <h1>
-                Видеа
-            </h1>
-        </div>
-        <div class="container video-section-container">
-            <div class="row justify-content-around video-row">
-                <div class="col-flex align-self-center">
-                    <div class="prev-video">
-                        <iframe src="" width="100%" height="140%" id="prev_video"></iframe>
-                        <button class="btn-navigate" id="prev_btn">
-                            <
-                        </button>
-                    </div>
-                </div>
-                <div class="col-flex align-self-center">
-                    <div class="middle-video">
-                        <button class="btn-navigate" id="prev_btn_xs">
-                            <
-                        </button>
-                        <iframe src="" width="100%" height="100%" id="mid_video"></iframe>
-                        <button class="btn-navigate btn-navigate-right" id="next_btn_xs">
-                            >
-                        </button>
-                    </div>
-                </div>
-                <div class="col-flex align-self-center">
-                    <div class="next-video">
-                        <iframe src="" width="100%" height="140%" id="next_video"></iframe>
-                        <button class="btn-navigate" id="next_btn">
-                            >
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- Предложени содржини -->
-    <section class="disable-select">
-        <div class="section-divider">
-            <h1>
-                Предложени содржини
-            </h1>
-        </div>
-        <div class="container">
-            <div class="row justify-content-around content-row">
-                <div class="col-flex">
-                    <div class="lower-card">
-                        <img src="img/placehold.jpg" class="lower-card-pic" alt="placeholder">
-                        <div class="lower-card-content">
-                            <h1>Lorem ipsum</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nulla cupiditate, consequatur delectus labore beatae placeat. Temporibus ex explicabo soluta?
-                            </p>
-                            <button class="btn">Дознај повеќе</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-flex content-mid-col">
-                    <div class="lower-card">
-                        <img src="img/placehold.jpg" class="lower-card-pic" alt="placeholder">
-                        <div class="lower-card-content">
-                            <h1>Lorem ipsum</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nulla cupiditate, consequatur delectus labore beatae placeat. Temporibus ex explicabo soluta?
-                            </p>
-                            <button class="btn">Дознај повеќе</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-flex">
-                    <div class="lower-card">
-                        <img src="img/placehold.jpg" class="lower-card-pic" alt="placeholder">
-                        <div class="lower-card-content">
-                            <h1>Lorem ipsum</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nulla cupiditate, consequatur delectus labore beatae placeat. Temporibus ex explicabo soluta?
-                            </p>
-                            <button class="btn">Дознај повеќе</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- FOOTER -->
-    <div class="container footer">
-        <div class="footer_sec">
-            <p class="contact_text"> Контакт: </p>  
-            <div> <img src="img/iconfinder_phone_1055012.png"> Lorem ipsum <img class="mail_icon"src="img/iconfinder_icon-6-mail-envelope-closed_315183.png"> Lorem ipsum </div>
-          </div>
-          <div class="footer_sec">
-            <a href="#"> <img class="footer_icon" src="img/iconfinder_facebook_834722.png"> </a>
-            <a href="#"> <img class="footer_icon" src="img/iconfinder_twitter_834708.png"> </a>
-          </div>
-    </div>
-
-
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
