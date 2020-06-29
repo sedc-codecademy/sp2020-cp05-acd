@@ -100,56 +100,64 @@ burgerCheck.addEventListener("click", function() {
 
 // Video-section
 
-const videoList = [
-    "https://www.youtube.com/embed/UznxKiHrNx4",
-    "https://www.youtube.com/embed/TKGBNNRWYts",
-    "https://www.youtube.com/embed/JAjZv41iUJU"
-]
-
-class videoSection {
-    constructor(counter, dom) {
-        this.counter = counter,
-        this.dom = dom,
-        dom.setAttribute("src",videoList[counter])
-    } 
-}
-
-class rightBtn {
-    constructor(video) {
-        this.click = document.getElementById("btn-right").addEventListener("click", function() {
-            if(video.counter === videoList.length - 1) {
-                video.counter = 0;
-                video.dom.setAttribute("src", videoList[video.counter])
-            } else {
-                video.counter++;
-                video.dom.setAttribute("src", videoList[video.counter])
-            }
-        })
+if(document.getElementById("video-content") !== null) {
+    const videoList = [
+        "https://www.youtube.com/embed/UznxKiHrNx4",
+        "https://www.youtube.com/embed/TKGBNNRWYts",
+        "https://www.youtube.com/embed/JAjZv41iUJU"
+    ]
+    
+    class videoSection {
+        constructor(counter, dom) {
+            this.counter = counter,
+            this.dom = dom,
+            dom.setAttribute("src",videoList[counter])
+        } 
     }
-}
-class leftBtn {
-    constructor(video) {
-        this.click = document.getElementById("btn-left").addEventListener("click", function() {
-            if(video.counter === 0) {
-                video.counter = videoList.length - 1;
-                video.dom.setAttribute("src", videoList[video.counter])
-            } else {
-                video.counter--;
-                video.dom.setAttribute("src", videoList[video.counter])
-            }
-        })
+    
+    const prevVideo = new videoSection(0, document.getElementById("video-previous"))
+    const centerVideo = new videoSection(1, document.getElementById("video-center"))
+    const nextVideo = new videoSection(2, document.getElementById("video-next"))
+    
+    class rightBtn {
+        constructor(video) {
+            this.click = document.getElementById("btn-right").addEventListener("click", function() {
+                if(video.counter === videoList.length - 1) {
+                    video.counter = 0;
+                    video.dom.setAttribute("src", videoList[video.counter])
+                } else {
+                    video.counter++;
+                    video.dom.setAttribute("src", videoList[video.counter])
+                }
+            })
+        }
     }
+    class leftBtn {
+        constructor(video) {
+            this.click = document.getElementById("btn-left").addEventListener("click", function() {
+                if(video.counter === 0) {
+                    video.counter = videoList.length - 1;
+                    video.dom.setAttribute("src", videoList[video.counter])
+                } else {
+                    video.counter--;
+                    video.dom.setAttribute("src", videoList[video.counter])
+                }
+            })
+        }
+    }
+    
+        
+        const rightBtn1 = new rightBtn(prevVideo);
+        const rightBtn2 = new rightBtn(centerVideo);
+        const rightBtn3 = new rightBtn(nextVideo);
+        
+        const leftBtn1 = new leftBtn(prevVideo);
+        const leftBtn2 = new leftBtn(centerVideo);
+        const leftBtn3 = new leftBtn(nextVideo);
+    
 }
 
-const prevVideo = new videoSection(0, document.getElementById("video-previous"))
-const centerVideo = new videoSection(1, document.getElementById("video-center"))
-const nextVideo = new videoSection(2, document.getElementById("video-next"))
 
-const rightBtn1 = new rightBtn(prevVideo);
-const rightBtn2 = new rightBtn(centerVideo);
-const rightBtn3 = new rightBtn(nextVideo);
 
-const leftBtn1 = new leftBtn(prevVideo);
-const leftBtn2 = new leftBtn(centerVideo);
-const leftBtn3 = new leftBtn(nextVideo);
+
 

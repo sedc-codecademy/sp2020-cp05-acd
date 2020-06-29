@@ -27,7 +27,7 @@ body {
         2.1 Contact
         2.2 Media
         2.3 Media queries
-    3. CONTENT
+    3. Home page
         3.1 Featured-content
         3.2 Card-content
         3.3 Other-content
@@ -35,7 +35,8 @@ body {
         3.5 Video-content
         3.6 Suggested-content
         3.7 Media queries
-    4. Register page && Log-in page
+    4. Register page && Log-in page && ForgottenPass page
+    5. Content page
 ====================*/
 
 /* =======================================================================
@@ -604,7 +605,7 @@ footer {
 }
 
 /* =======================================================================
-   3. CONTENT
+   3. Home page
 ====================*/
 
 .container-main {
@@ -1348,5 +1349,111 @@ footer {
     }
     .clicklink {
         font-size: 13px;
+    }
+}
+
+/* =======================================================================
+   5. Content page
+====================*/
+
+.content-page {
+    margin-bottom: 3em;
+}
+
+.content-image-container {
+    display: none;
+    margin: 0;
+    margin-top: 10em;
+    margin-bottom: 3em;
+    width: 100%;
+}
+
+.content-image {
+    max-width: 100%;
+}
+
+.content-divider {
+    display: none;
+    height: 1em;
+    width: 100%;
+    background-color: #2a69bf;
+    margin-bottom: 3em;
+}
+
+.content-featured {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.content-featured * {
+    margin: 1em auto;
+}
+
+.content-title,
+.content-feature {
+    color: #2f75d4;
+}
+
+.content-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-links div{
+    margin: 1em auto;
+}
+
+.content-link {
+    width: 100%;
+}
+
+.link-left::after {
+    background: url(images/healthy.png);
+    background-size: cover;
+}
+
+.link-right::after {
+    background: url(images/healthy-food.png);
+    background-size: cover;
+}
+
+
+@media (min-width: 768px) {
+    .content-image-container {
+        display: block;
+    }
+
+    .content-divider {
+        display: block;
+    }
+
+    .container-content {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .content-links {
+        flex-direction: row;
+    }
+    .content-link {
+        width: 50%;
+        height: 400px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .content-image-container {
+        margin-top: 8em;
+    }
+    .content-featured {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1160px) {
+
+    .content-image-container {
+        margin-top: 7em;
     }
 }
