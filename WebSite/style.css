@@ -35,6 +35,7 @@ body {
         3.5 Video-content
         3.6 Suggested-content
         3.7 Media queries
+    4. Register page && Log-in page
 ====================*/
 
 /* =======================================================================
@@ -1205,5 +1206,147 @@ footer {
 
     .background img {
         right: 35%;
+    }
+}
+
+/* =======================================================================
+   4. Register page && Log-in page && ForgottenPass page
+====================*/
+
+.register,
+.login,
+.change {
+    margin: 3%;
+    border: 1px solid rgb(208, 233, 245);
+    border-top: 5px solid #2f75d3;
+    padding: 20px;
+    text-align: left;
+}
+
+.change {
+    margin-bottom: 100px;
+}
+
+.infoinput {
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow:inset 0 0 20px rgb(185, 190, 192);
+}
+
+.register p,
+.login p,
+.change p {
+    color: black;
+}
+
+.infotext {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.head {
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.register form,
+.login form,
+.change form {
+    margin-left: 15px;
+}
+
+.registerbtn,
+.loginbtn,
+.confirmbtn {
+    height: 40px;
+    width: 120px;
+    background-color: #2f75d3;
+    color: #ffffff;
+    border: none;
+    margin-bottom: 25px;
+}
+
+
+/* Register */
+
+#agree {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+.agree {
+    padding-left: 10px;
+    font-size: 13px;
+}
+
+
+@media (max-width: 425px) {
+
+    .infoinput {
+        width: 200px;
+    }
+
+    .registerbtn {
+        margin-top: 30px;
+    }
+}
+
+/* Log-in */
+
+.forgoten {
+    font-size: 12px;
+    position: relative;
+    top: 30px;
+    right: 125px;
+    color:black;
+}
+.forgoten1 {
+    display: none;
+}
+#remember {
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+.remember {
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.clickfield {
+    margin-bottom: 20px;
+    height: 50px;
+    line-height: 50px;
+    background-color:rgb(208, 233, 245);
+    text-align: center;
+    width: 300px;
+    align-items: center;
+}
+.clicklink {
+    font-size: 17px;
+}
+.clicklink a {
+    color: #2f75d3; 
+}
+
+@media only screen and (max-width: 540px) {
+    .forgoten {
+        display: none;
+    }
+    .forgoten1 {
+        display: inline-block;
+        color:black;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .clickfield {
+        width: 200px;
+        height: 100%;
+    }
+    .clicklink {
+        font-size: 13px;
     }
 }
