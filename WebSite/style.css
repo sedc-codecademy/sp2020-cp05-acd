@@ -774,21 +774,22 @@ footer {
 .featured-img,
 .featured-text {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .featured-img {
-    height: 40%;
+    justify-content: center;
 }
 
+.featured-img,
 .featured-text {
-    height: 60%;
+    height: 50%;
 }
 
 .featured-text {
     flex-direction: column;
-    padding: 0 2em
+    padding: 0 2em;
 }
 
 .featured-text h3 {
