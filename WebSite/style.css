@@ -98,6 +98,14 @@ body {
 }
 
 /* =======================================================================
+    HIDE
+====================*/
+
+.hidden {
+    display: none;
+}
+
+/* =======================================================================
    1. NAVBAR
 ====================*/
 
@@ -137,27 +145,24 @@ header {
     align-items: center;
     width: 16.5em;
     text-decoration: none;
-}
-
-.logo-link p,
-.logo-link h3 {
-    margin-top: 5px;
-    padding-left: 7px;
-    font-weight: 700;
-}
-
-.logo-link p {
     color: rgba(0,0,0, .3);
+    font-weight: 700;
+    margin-top: 5px;
 }
 
-.logo-link h3 {
+.first-logo {
     text-transform: uppercase;
     color: black;
     font-size: 1.25rem;
 }
 
 .logo-link img {
-    height: 3.5em;
+    height: 2.5em;
+    padding-right: 7px;
+}
+
+.second-logo img {
+    height: 3em
 }
 
 /* log-in / profile */
@@ -324,6 +329,10 @@ nav ul {
     .dropdown-merged {
         display: flex;
     }
+    .logo-link {
+        font-size: .8rem;
+        width: 14.5em;
+    }
 }
 
 @media (max-width: 1160px) {
@@ -339,10 +348,10 @@ nav ul {
         margin-top: 1em;
     }
     .logo-link {
-        font-size: .9rem;
+        font-size: .8rem;
         width: 14.5em;
     }
-    .first-logo h3{
+    .first-logo{
         font-size: .9rem;
     }
 }
@@ -474,10 +483,14 @@ nav ul {
 
 @media (max-width: 500px) {
     .second-logo {
-        width: auto;
+        width: 100px;
+        color: transparent;
     }
-    .second-logo p{
-        display: none;
+    .second-logo img {
+        height: 5em;
+    }
+    .log-in {
+        font-size: .7rem;
     }
 }
 
@@ -668,7 +681,6 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
 }
 
 .featured-card,
@@ -716,6 +728,11 @@ footer {
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
+}
+
+.third-card,
+.last-card {
+    display: none;
 }
 
 /* ============
@@ -1007,15 +1024,6 @@ footer {
 
 }
 
-@media (min-width: 800px) {
-
-    /* Card-content */
-
-    .last-card {
-        display: none;
-    }
-}
-
 @media (min-width: 900px) {
     
     /* Background */
@@ -1023,6 +1031,12 @@ footer {
     .background img {
         right: 5%;
         height: 650px;
+    }
+
+    /* Card-content */
+
+    .third-card {
+        display: block;
     }
 
     /* Suggested-content */
@@ -1139,12 +1153,6 @@ footer {
     .container-main {
         margin-top: 7em;
     }
-
-    /* Card-content */
-
-    .last-card {
-        display: block;
-    }
 }
 
 @media (min-width: 1200px) {
@@ -1153,6 +1161,12 @@ footer {
     .background img {
         right: 25%;
         height: 650px;
+    }
+
+    /* Card-content */
+
+    .last-card {
+    display: block;
     }
 
     /* Video-content */
@@ -1210,6 +1224,7 @@ footer {
         right: 35%;
     }
 }
+
 
 /* =======================================================================
    4. Register page && Log-in page && ForgottenPass page

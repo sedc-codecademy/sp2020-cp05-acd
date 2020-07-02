@@ -83,20 +83,22 @@ const burgerCheck = document.getElementById("burger-bar");
 const header = document.getElementsByTagName("header")[0];
 const footer = document.getElementsByTagName("footer")[0];
 
-burgerCheck.addEventListener("click", function() {
-    if(burgerCheck.checked) {
-        header.removeAttribute("class");
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        header.style.position = "absolute"
-        header.style.top = 0
-        footer.style.position = "relative";
-    } else if (!burgerCheck.checked) {
-        header.setAttribute("class", "fixed");
-        footer.style.position = "fixed";
-        header.style.position = "fixed"
+const burgerChecked = () => {
+        if(burgerCheck.checked) {
+            header.removeAttribute("class");
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            header.style.position = "absolute"
+            header.style.top = 0
+            footer.style.position = "relative";
+        } else if (!burgerCheck.checked) {
+            header.setAttribute("class", "fixed");
+            footer.style.position = "fixed";
+            header.style.position = "fixed"
     }
-})
+}
+
+burgerCheck.addEventListener("click", burgerChecked)
 
 // Video-section
 
@@ -158,6 +160,52 @@ if(document.getElementById("video-content") !== null) {
 }
 
 
+//////////////////
+// Single page
+/////////////////
 
+// Navigation links
+const navigationLinks = {
+    homeBtn: document.getElementById('home-btn'),
+    contentBtn: document.getElementById('content-btn'),
+    loginBtn: document.getElementById('profile'),
+    registerBtn: document.getElementById('register'),
+    forgottenBtn: document.getElementById('forgotten-link'),
+    forgottenBtn2: document.getElementById('forgotten-link-two'),
+    contentBtnCombined: document.getElementById('content-btn-combined')
+}
 
+// Pages
+const pages = {
+    homePage: document.getElementById('home-page'),
+    contentPage: document.getElementById('content-page'),
+    loginPage: document.getElementById('login-page'),
+    registerPage: document.getElementById('register-page'),
+    forgottenPage: document.getElementById('forgotten-page')
+}
+
+const setEventListeners = () => {
+    for (const link in navigationLinks) {
+        navigationLinks[link].addEventListener('click', (event) => {
+            // data-page attribute in the HTML should have the same name as the pages property
+            showPage(event.target.dataset.page);
+        })
+    }
+};
+
+// show the page sent as argument
+const showPage = (page) => {
+    for (const pageKey in pages) {
+        //this line hides all pages
+        pages[pageKey].classList.add('hidden');
+    }
+    // on this line the proper page which navigation link was clicked is shown
+    pages[page].classList.remove('hidden');
+    burgerCheck.checked = false;
+    burgerChecked();
+};
+
+setEventListeners();
+//shownPage is called here with the initial page, which is home
+showPage('homePage');
 
