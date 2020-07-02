@@ -213,5 +213,5 @@ const showPage = (page) => {
 
 setEventListeners();
 //shownPage is called here with the initial page, which is home
-showPage('contentPage');
+showPage('homePage');
 
