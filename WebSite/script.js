@@ -5,6 +5,8 @@ class Link {
         this.dropDisp = drop.style.display = "none";
         item.click = item.addEventListener("click", function () {
             if (window.matchMedia("(max-width: 1000px)").matches) {
+                drop.classList.remove('drop-animate')
+                drop.classList.add('swing-in-top-fwd')
                 for (const i of dropList) {
                     if (drop !== i) {
                         i.style.display = "none";
@@ -20,6 +22,8 @@ class Link {
         });
         item.mouseOver = item.addEventListener("mouseover", function () {
             if (window.matchMedia("(min-width: 1000px)").matches) {
+                drop.classList.add('drop-animate')
+                drop.classList.remove('swing-in-top-fwd')
                 if (drop.style.display === "none") {
                     drop.style.display = "flex";
                 }
@@ -29,7 +33,9 @@ class Link {
             }
         });
         item.mouseOut = item.addEventListener("mouseout", function () {
-            if (window.matchMedia("(min-width: 1000px)").matches) {
+            if (window.matchMedia("(min-width: 1000px)").matches) { 
+                drop.classList.add('drop-animate')
+                drop.classList.remove('swing-in-top-fwd')
                 if (drop.style.display === "none") {
                     drop.style.display = "flex";
                 }
@@ -207,5 +213,5 @@ const showPage = (page) => {
 
 setEventListeners();
 //shownPage is called here with the initial page, which is home
-showPage('homePage');
+showPage('contentPage');
 
