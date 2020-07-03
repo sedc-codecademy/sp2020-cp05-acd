@@ -248,7 +248,17 @@ const navigationLinks = [
         dom: document.getElementById("signs-and-symptoms-combined"),
         id: 7,
         title: "Тип 2"
-    } 
+    },
+    covid19AndDiabetes = {
+        dom: document.getElementById("news-two-id"),
+        id: 8,
+        title: "Вести"
+    },
+    covid19AndDiabetesTwo = {
+        dom: document.getElementById("latest-news"),
+        id: 8,
+        title: "Вести"
+    }    
 ]
 
 // Pages
@@ -301,7 +311,7 @@ const generatePage = (items, pageToChange, nav) => {
     if(pageToChange.static) {
         pageToChange.dom.classList.remove('hidden')
     }
-    else {
+    else if (pageToChange.title === "contentPage") {
         // this is where contentPage is being handled
         pageToChange.dom.classList.remove('hidden')
         for (const item of items) {
@@ -357,6 +367,17 @@ let fetchedJSONdata = [
         p4: " ",
         id: 7,
         img: "images/diabetes-placehold.png"
+    },
+    {
+        title: 'COVID-19 И ДИЈАБЕТЕС',
+        subtitle: ' ',
+        p1: "There is a bidirectional relationship between Covid-19 and diabetes. On the one hand, diabetes is associated with an increased risk of severe Covid-19. On the other hand, new-onset diabetes and severe metabolic complications of preexisting diabetes, including diabetic ketoacidosis and hyperosmolarity for which exceptionally high doses of insulin are warranted, have been observed in patients with Covid-19.1-3 These manifestations of diabetes pose challenges in clinical management and suggest a complex pathophysiology of Covid-19–related diabetes.",
+        p2: "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), the virus that causes Covid-19, binds to angiotensin-converting enzyme 2 (ACE2) receptors, which are expressed in key metabolic organs and tissues, including pancreatic beta cells, adipose tissue, the small intestine, and the kidneys.4 Thus, it is plausible that SARS-CoV-2 may cause pleiotropic alterations of glucose metabolism that could complicate the pathophysiology of preexisting diabetes or lead to new mechanisms of disease.There are also several precedents for a viral cause of ketosis-prone diabetes, including other coronaviruses that bind to ACE2 receptors.5 Greater incidences of fasting glycemia and acute-onset diabetes have been reported among patients with SARS coronavirus 1 pneumonia than among those with non-SARS pneumonia.5",
+        lowerSubtitle: " ",
+        p3: "In the aggregate, these observations provide support for the hypothesis of a potential diabetogenic effect of Covid-19, beyond the well-recognized stress response associated with severe illness. However, whether the alterations of glucose metabolism that occur with a sudden onset in severe Covid-19 persist or remit when the infection resolves is unclear. How frequent is the phenomenon of new-onset diabetes, and is it classic type 1 or type 2 diabetes or a new type of diabetes? Do these patients remain at higher risk for diabetes or diabetic ketoacidosis? In patients with preexisting diabetes, does Covid-19 change the underlying pathophysiology and the natural history of the disease? Answering these questions in order to inform the immediate clinical care, follow-up, and monitoring of affected patients is a priority.",
+        p4: "To address these issues, an international group of leading diabetes researchers participating in the CoviDIAB Project have established a global registry of patients with Covid-19–related diabetes (covidiab.e-dendrite.com. opens in new tab). The goal of the registry is to establish the extent and phenotype of new-onset diabetes that is defined by hyperglycemia, confirmed Covid-19, a negative history of diabetes, and a history of a normal glycated hemoglobin level. The registry, which will be expanded to include patients with preexisting diabetes who present with severe acute metabolic disturbance, may also be used to investigate the epidemiologic features and pathogenesis of Covid-19–related diabetes and to gain clues regarding appropriate care for patients during and after the course of Covid-19. Given the very short history of human infection with SARS-CoV-2, an understanding of how Covid-19–related diabetes develops, the natural history of this disease, and appropriate management will be helpful. The study of Covid-19–related diabetes may also uncover novel mechanisms of disease.",
+        id: 8,
+        img: "images/covid-and-diabetes.png"
     }
 ]
 
@@ -392,7 +413,6 @@ document.getElementById('home-page').classList.remove('hidden');
 3. create a data-page attribute which points to the page you want to link to (put in contentPage if you want to use the template)
 4. create a link object in the navigationLinks array
 5. there should be a JSON object with the same ID as the link object (if there is no ID connection you get the default contentPage)
-
 
 */
 
