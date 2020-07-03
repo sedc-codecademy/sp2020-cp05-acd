@@ -1040,20 +1040,12 @@ footer {
     margin: .5em auto;
 }
 
+
 /* ============
     3.7 Media queries
 ===============*/
 
 @media (min-width: 425px) {
-
-    .background img {
-        display: block;
-        position: absolute;
-        height: 80%;
-        bottom: 0;
-        right: 0;
-        opacity: .3;
-    }
 
     /* Featured-content */
 
@@ -1087,6 +1079,19 @@ footer {
 
 @media (min-width: 768px) {
 
+    /* Background */
+
+    .background img {
+        display: block;
+        position: absolute;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        opacity: .3;
+        margin-right: -50vw;
+        right: 75%;
+    }
+
     /* Video-content */
 
     .video-content {
@@ -1111,13 +1116,6 @@ footer {
 }
 
 @media (min-width: 900px) {
-    
-    /* Background */
-
-    .background img {
-        right: 5%;
-        height: 650px;
-    }
 
     /* Card-content */
 
@@ -1128,12 +1126,6 @@ footer {
 }
 
 @media (min-width: 1000px) {
-
-    /* Background */
-
-    .background img {
-        right: 15%;
-    }
 
     .container-main {
         margin-top: 8em;
@@ -1242,12 +1234,6 @@ footer {
 }
 
 @media (min-width: 1200px) {
-    /* Background */
-
-    .background img {
-        right: 25%;
-        height: 650px;
-    }
 
     /* Card-content */
 
@@ -1274,11 +1260,6 @@ footer {
 
 
 @media (min-width: 1500px) {
-    /* Background */
-
-    .background img {
-        right: 30%;
-    }
 
     /* Video-content */
 
@@ -1310,16 +1291,11 @@ footer {
     }
 }
 
-
-
 @media (min-width: 2500px) {
-    /* Background */
-
-    .background img {
-        right: 35%;
+    .background {
+        height: 50vh;
     }
 }
-
 
 /* =======================================================================
    4. Register page && Log-in page && ForgottenPass page
@@ -1578,5 +1554,11 @@ footer {
 
     .content-image-container {
         margin-top: 7em;
+    }
+}
+
+@media (min-width: 2500px) {
+    .content-image-container {
+        height: 50vh;
     }
 }
