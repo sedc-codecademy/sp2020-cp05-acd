@@ -1079,19 +1079,6 @@ footer {
 
 @media (min-width: 768px) {
 
-    /* Background */
-
-    .background img {
-        display: block;
-        position: absolute;
-        height: 100%;
-        bottom: 0;
-        right: 0;
-        opacity: .3;
-        margin-right: -50vw;
-        right: 75%;
-    }
-
     /* Video-content */
 
     .video-content {
@@ -1126,6 +1113,19 @@ footer {
 }
 
 @media (min-width: 1000px) {
+
+        /* Background */
+
+        .background img {
+            display: block;
+            position: absolute;
+            height: 100%;
+            bottom: 0;
+            right: 0;
+            opacity: .3;
+            margin-right: -50vw;
+            right: 75%;
+        }
 
     .container-main {
         margin-top: 8em;
@@ -1291,7 +1291,7 @@ footer {
     }
 }
 
-@media (min-width: 2500px) {
+@media (min-height: 1000px) {
     .background {
         height: 50vh;
     }
@@ -1557,7 +1557,7 @@ footer {
     }
 }
 
-@media (min-width: 2500px) {
+@media (min-height: 1000px) {
     .content-image-container {
         height: 50vh;
     }
