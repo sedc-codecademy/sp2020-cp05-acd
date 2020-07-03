@@ -1,3 +1,24 @@
+// Landscape 
+
+window.onresize = headerAndFooterPosition
+
+function match() {
+        header.style.position = "absolute"
+        header.style.top = 0
+        footer.style.position = "relative";
+}
+
+function headerAndFooterPosition() {
+    if(window.matchMedia("(max-width: 900px)").matches && window.matchMedia("(orientation: landscape)").matches) {
+        match()
+    } else {
+        header.setAttribute("class", "fixed");
+        footer.style.position = "fixed";
+        header.style.position = "fixed";
+    }
+}
+
+
 // Links
 
 class Link {
@@ -18,7 +39,7 @@ class Link {
                 else if (drop.style.display === "flex") {
                     drop.style.display = "none";
                 }
-            }
+            } 
         });
         item.mouseOver = item.addEventListener("mouseover", function () {
             if (window.matchMedia("(min-width: 1000px)").matches) {
@@ -98,7 +119,10 @@ const burgerChecked = () => {
         } else if (!burgerCheck.checked) {
             header.setAttribute("class", "fixed");
             footer.style.position = "fixed";
-            header.style.position = "fixed"
+            header.style.position = "fixed";
+            if(window.matchMedia("(max-width: 900px)").matches && window.matchMedia("(orientation: landscape)").matches) {
+                match()
+            }
     }
 }
 
