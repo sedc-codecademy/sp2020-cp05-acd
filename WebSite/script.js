@@ -238,7 +238,17 @@ const navigationLinks = [
         dom: document.getElementById('news-one-id'),
         id: 6,
         title: "Вести"
-    }, 
+    },
+    typeTwoSignsAndSymptoms = {
+        dom: document.getElementById("signs-and-symptoms"),
+        id: 7,
+        title: "Тип 2"
+    },
+    typeTwoSignsAndSymptomsCombined = {
+        dom: document.getElementById("signs-and-symptoms-combined"),
+        id: 7,
+        title: "Тип 2"
+    } 
 ]
 
 // Pages
@@ -255,7 +265,16 @@ const pages = [
     contentPage = {
         dom: document.getElementById('content-page'),
         title: "contentPage",
-        static: false
+        static: false,
+        navTitle: document.getElementById("content-title"),
+        contentTitle: document.getElementById("content-feature"),
+        contentSubtitle: document.getElementById("content-subtitle"),
+        parOne: document.getElementById("content-par-one"),
+        parTwo: document.getElementById("content-par-two"),
+        contentLowerSubtitle: document.getElementById("content-lower-subtitle"),
+        parThree: document.getElementById("content-par-three"),
+        parFour: document.getElementById("content-par-four"),
+        contentImg: document.getElementById("content-img")
     }, 
     loginPage= {
         dom: document.getElementById('login-page'),
@@ -283,89 +302,19 @@ const generatePage = (items, pageToChange, nav) => {
         pageToChange.dom.classList.remove('hidden')
     }
     else {
-        document.getElementById('content-page').classList.remove('hidden')
+        // this is where contentPage is being handled
+        pageToChange.dom.classList.remove('hidden')
         for (const item of items) {
             if(item.id === nav.id) {
-                document.getElementById('content-page').innerHTML = `
-                <main>
-        
-                <div class="content-image-container">
-                    <img class="content-image" src="${item.img}" alt="mother and child at doctor">
-                </div>
-                
-                <div class="container container-max container-main container-content">
-        
-                    <div class="content-divider">
-                    </div>
-        
-                    <div class="content-page">
-                        <article class="content-featured">
-                            <h3 class="content-title">${nav.title}</h3>
-                            <h1 class="content-feature">${item.title}</h1>
-                            <h2 class="content-suggestion">${item.subtitle}</h2>
-                            <p> ${item.p1} </p>
-                            <p> ${item.p2} </p>
-                        </article>
-        
-                        <div class="content-links">
-                            <div class="other-image shadow content-link link-left">
-                                <a href="#"><h3>Новитети</h3></a>
-                            </div>
-                            <div class="other-image shadow content-link link-right">
-                                <a href="#"><h3>Исхрана</h3></a>
-                            </div>
-                        </div>
-        
-                        <article class="content-featured">
-                            <h2 class="content-feature">${item.lowerSubtitle}</h2>
-                            <p> ${item.p3} </p>
-                            <p> ${item.p4} </p>
-                        </article>
-                    </div>
-        
-                    <div class="divider">
-                        <div class="container container-max">
-                            <h2 class="divider-text">Предложени содржини</h2>
-                        </div>
-                    </div>
-        
-                    <div class="suggested-content">
-                        <div class="suggested-card shadow scale">
-                            <img src="images/virus-placeholder.png" alt="virus-image">
-                            <div>
-                                <h3>Lorem ipsum</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, magnam?
-                                </p>
-                                <a href="#" class="btn">Дознај повеќе</a>
-                            </div>
-                        </div>
-                        <div class="suggested-card shadow middle-card scale">
-                            <img src="images/dawn.png" alt="happy children at dawn">
-                            <div>
-                                <h3>Lorem ipsum</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, magnam?
-                                </p>
-                                <a href="#" class="btn">Дознај повеќе</a>
-                            </div>
-                        </div>
-                        <div class="suggested-card shadow scale">
-                            <img src="images/measurement.png" alt="blood sugar measurement">
-                            <div>
-                                <h3>Lorem ipsum</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, magnam?
-                                </p>
-                                <a href="#" class="btn">Дознај повеќе</a>
-                            </div>
-                        </div>
-                    </div>
-        
-                </div>
-        
-            </main>
-             `
+                pageToChange.navTitle.innerHTML = nav.title
+                pageToChange.contentTitle.innerHTML = item.title
+                pageToChange.contentSubtitle.innerHTML = item.subtitle
+                pageToChange.parOne.innerHTML = item.p1
+                pageToChange.parTwo.innerHTML = item.p2
+                pageToChange.contentLowerSubtitle.innerHTML = item.lowerSubtitle
+                pageToChange.parThree.innerHTML = item.p3
+                pageToChange.parFour.innerHTML = item.p4
+                pageToChange.contentImg.setAttribute("src", item.img)
             }
         }       
     }
@@ -397,6 +346,17 @@ let fetchedJSONdata = [
         p4: " ",
         id: 6,
         img: "images/diabetes-camp.png"
+    },
+    {
+        title: 'Знаци и симптоми карактеристични за тип 2 дијабетес',
+        subtitle: ' ',
+        p1: "Најчест тип на дијабетес (70–80% од сите пациенти со дијабетес). 80% од пациентите се натхранети. Синдром на инсулинска резистенција (метаболен синдром) често ѝ претходи на болеста: дебелина, зголемен крвен притисок, абнормално ниво на липиди (ви-соки триглицерид (2–3 mmol/L, ретко > 5 mmol/L) и низок HDL-холестерол) и често покачена концентрација на серумски урати.",
+        p2: "Вообичаено дијагнозата е кај возрасни (по возраст од 35 години). Атеросклерозата е најзначајната компликација од болеста, како коронарна арте-риска болест, артериопатија на долните екстремитети и мозочни и други макровас-куларни болести (удар). Пациентите имаат значајна семејна историја на дијабетес, хипертензија и коронар-на артериска болест.",
+        lowerSubtitle: " ",
+        p3: " ",
+        p4: " ",
+        id: 7,
+        img: "images/diabetes-placehold.png"
     }
 ]
 
@@ -427,7 +387,11 @@ document.getElementById('home-page').classList.remove('hidden');
 
 /*  == How to create a new link and content page == 
 
-1. 
+1. create the li in the correct nav-item
+2. create an ID for that link
+3. create a data-page attribute which points to the page you want to link to (put in contentPage if you want to use the template)
+4. create a link object in the navigationLinks array
+5. there should be a JSON object with the same ID as the link object (if there is no ID connection you get the default contentPage)
 
 
 */
