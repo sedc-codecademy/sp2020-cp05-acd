@@ -47,8 +47,6 @@ class Link {
     }
 }
 
-
-
 const firstItem = document.getElementById("first-item");
 const firstDrop = document.getElementById("first-drop");
 const firstLink = new Link(firstItem, firstDrop);
@@ -167,51 +165,244 @@ if(document.getElementById("video-content") !== null) {
 
 
 //////////////////
-// Single page
+// Single page + content generation
 /////////////////
 
 // Navigation links
-const navigationLinks = {
-    homeBtn: document.getElementById('home-btn'),
-    contentBtn: document.getElementById('content-btn'),
-    loginBtn: document.getElementById('profile'),
-    registerBtn: document.getElementById('register'),
-    forgottenBtn: document.getElementById('forgotten-link'),
-    forgottenBtn2: document.getElementById('forgotten-link-two'),
-    contentBtnCombined: document.getElementById('content-btn-combined')
-}
+// the link ID should correspond to the ID of the json file (this is how the link recognizes which json file to connect to)
+// if more than one link connects to the same page, those links should have the same ID
+// ex : typeOneWhatToKnow and typeOneWhatToKnowCombined link to the same page so they have the same ID
+// the title is the name of the upper navigation items(vesti, proekti i inicijativi, edukacija, ishrana ...)
+
+const navigationLinks = [
+    homeBtn = {
+        dom: document.getElementById('home-btn'),
+        id: 1,
+        title: "Home"
+    },
+    loginBtn= {
+        dom: document.getElementById('profile'),
+        id: 2,
+        title: "Profile"
+    },
+    registerBtn= {
+        dom: document.getElementById('register'),
+        id: 3,
+        title: "Register"
+    },
+    forgottenBtn= {
+        dom: document.getElementById('forgotten-link'),
+        id: 4,
+        title: "Forgotten password"
+    },
+    forgottenBtn2= {
+        dom: document.getElementById('forgotten-link-two'),
+        id: 4,
+        title: "Forgotten password"
+    },
+    typeOneWhatToKnow= {
+        dom: document.getElementById('type-one-what-to-know'),
+        id: 5,
+        title: "Тип 1"
+    },
+    typeOneWhatToKnowCombined= {
+        dom: document.getElementById('type-one-what-to-know-combined'),
+        id: 5,
+        title: "Тип 1"
+    },
+    newsOne= {
+        dom: document.getElementById('news-one-id'),
+        id: 6,
+        title: "Вести"
+    }, 
+]
 
 // Pages
-const pages = {
-    homePage: document.getElementById('home-page'),
-    contentPage: document.getElementById('content-page'),
-    loginPage: document.getElementById('login-page'),
-    registerPage: document.getElementById('register-page'),
-    forgottenPage: document.getElementById('forgotten-page')
+// if any change is made to the template page, those attributes must be copied over lower at the generatePage function 
+// the title of the page is irrelevant if page is static
+// the title of the page should correspond to the template type it represents (there should be a data-page="..." on the link item in the HTML)
+// the static attribute determines whether the page is a template
+const pages = [
+    homePage = {
+        dom: document.getElementById('home-page'),
+        title: "homePage",
+        static: true
+    },
+    contentPage = {
+        dom: document.getElementById('content-page'),
+        title: "contentPage",
+        static: false
+    }, 
+    loginPage= {
+        dom: document.getElementById('login-page'),
+        title: "loginPage",
+        static: true
+    },
+    registerPage= {
+        dom: document.getElementById('register-page'),
+        title: "registerPage",
+        static: true
+    },
+    forgottenPage = {
+        dom: document.getElementById('forgotten-page'),
+        title: "forgottenPage",
+        static: true
+    },
+]
+
+
+// This function generates a page 
+// if the page is static it displays the page itself
+// if the page is !static it generates a new page with attributes from JSON
+const generatePage = (items, pageToChange, nav) => {
+    if(pageToChange.static) {
+        pageToChange.dom.classList.remove('hidden')
+    }
+    else {
+        document.getElementById('content-page').classList.remove('hidden')
+        for (const item of items) {
+            if(item.id === nav.id) {
+                document.getElementById('content-page').innerHTML = `
+                <main>
+        
+                <div class="content-image-container">
+                    <img class="content-image" src="images/doctor-monther-child-stock.png" alt="mother and child at doctor">
+                </div>
+                
+                <div class="container container-max container-main container-content">
+        
+                    <div class="content-divider">
+                    </div>
+        
+                    <div class="content-page">
+                        <article class="content-featured">
+                            <h3 class="content-title">${nav.title}</h3>
+                            <h1 class="content-feature">${item.title}</h1>
+                            <h2 class="content-suggestion">${item.subtitle}</h2>
+                            <p> ${item.p1} </p>
+                            <p> ${item.p2} </p>
+                        </article>
+        
+                        <div class="content-links">
+                            <div class="other-image shadow content-link link-left">
+                                <a href="#"><h3>Новитети</h3></a>
+                            </div>
+                            <div class="other-image shadow content-link link-right">
+                                <a href="#"><h3>Исхрана</h3></a>
+                            </div>
+                        </div>
+        
+                        <article class="content-featured">
+                            <h2 class="content-feature">${item.lowerSubtitle}</h2>
+                            <p> ${item.p3} </p>
+                            <p> ${item.p4} </p>
+                        </article>
+                    </div>
+        
+                    <div class="divider">
+                        <div class="container container-max">
+                            <h2 class="divider-text">Предложени содржини</h2>
+                        </div>
+                    </div>
+        
+                    <div class="suggested-content">
+                        <div class="suggested-card shadow scale">
+                            <img src="images/virus-placeholder.png" alt="virus-image">
+                            <div>
+                                <h3>Lorem ipsum</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, magnam?
+                                </p>
+                                <a href="#" class="btn">Дознај повеќе</a>
+                            </div>
+                        </div>
+                        <div class="suggested-card shadow middle-card scale">
+                            <img src="images/dawn.png" alt="happy children at dawn">
+                            <div>
+                                <h3>Lorem ipsum</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, magnam?
+                                </p>
+                                <a href="#" class="btn">Дознај повеќе</a>
+                            </div>
+                        </div>
+                        <div class="suggested-card shadow scale">
+                            <img src="images/measurement.png" alt="blood sugar measurement">
+                            <div>
+                                <h3>Lorem ipsum</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, magnam?
+                                </p>
+                                <a href="#" class="btn">Дознај повеќе</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+        
+            </main>
+             `
+            }
+        }       
+    }
 }
 
+// This data should be taken from a JSON api call using fetch
+// The point of this is to simulate different pages
+// each attribute of each object corresponds to an element in the contentPage (contentPage is the only template page we have atm)
+// the object ID should correspond to the ID of the link which connects to it (this is how the link recognizes which json file to connect to)
+let fetchedJSONdata = [
+    {
+        title: 'Патот за да го разберете дијабетот започнува овде со нас',
+        subtitle: 'Што треба да знаете за дијабетес тип 1',
+        p1: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        p2: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+        lowerSubtitle: "Пронајдете го балансот",
+        p3: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+        p4: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam",
+        id: 5
+    },
+    {
+        title: 'Камп за млади дијабетес лидери',
+        subtitle: ' ',
+        p1: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        p2: ' ',
+        lowerSubtitle: "Приклyчете се сега!",
+        p3: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+        p4: " ",
+        id: 6
+    }
+]
+
+// dont touch
 const setEventListeners = () => {
     for (const link in navigationLinks) {
-        navigationLinks[link].addEventListener('click', (event) => {
-            // data-page attribute in the HTML should have the same name as the pages property
-            showPage(event.target.dataset.page);
+        navigationLinks[link].dom.addEventListener('click', (event) => {
+            showPage(event.target.dataset.page, navigationLinks[link]);
         })
     }
 };
 
-// show the page sent as argument
-const showPage = (page) => {
-    for (const pageKey in pages) {
-        //this line hides all pages
-        pages[pageKey].classList.add('hidden');
+// dont touch
+const showPage = (page, nav) => {
+    pages.forEach(p => p.dom.classList.add('hidden'))
+    for (const p of pages) {
+        p.title === page ? generatePage(fetchedJSONdata, p, nav) : null;
     }
-    // on this line the proper page which navigation link was clicked is shown
-    pages[page].classList.remove('hidden');
     burgerCheck.checked = false;
     burgerChecked();
 };
-
 setEventListeners();
-//shownPage is called here with the initial page, which is home
-showPage('homePage');
+
+// The next line hides all the pages on initial load
+pages.forEach(p => p.dom.classList.add('hidden'))
+// The next line shows the home page on initial load
+document.getElementById('home-page').classList.remove('hidden');
+
+/*  == How to create a new link and content page == 
+
+1. 
+
+
+*/
 
