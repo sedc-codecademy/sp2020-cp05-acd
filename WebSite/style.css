@@ -1487,7 +1487,7 @@ footer {
 }
 
 .content-suggestion {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
 }
 
 .content-divider {
@@ -1580,6 +1580,9 @@ footer {
 
     .content-image-container {
         margin-top: 7em;
+    }
+    .content-suggestion {
+        font-size: 1.2rem;
     }
 }
 
