@@ -132,9 +132,9 @@ burgerCheck.addEventListener("click", burgerChecked)
 
 if(document.getElementById("video-content") !== null) {
     const videoList = [
+        "https://www.youtube.com/embed/JAjZv41iUJU",
         "https://www.youtube.com/embed/UznxKiHrNx4",
-        "https://www.youtube.com/embed/TKGBNNRWYts",
-        "https://www.youtube.com/embed/JAjZv41iUJU"
+        "https://www.youtube.com/embed/TKGBNNRWYts"   
     ]
     
     class videoSection {
@@ -193,10 +193,11 @@ if(document.getElementById("video-content") !== null) {
 /////////////////
 
 // Navigation links
-// the link ID should correspond to the ID of the json file (this is how the link recognizes which json file to connect to)
+// the link ID should correspond to the ID of the json file (this is how the link recognizes which object in the json file to connect to)
 // if more than one link connects to the same page, those links should have the same ID
 // ex : typeOneWhatToKnow and typeOneWhatToKnowCombined link to the same page so they have the same ID
 // the title is the name of the upper navigation items(vesti, proekti i inicijativi, edukacija, ishrana ...)
+// it is important to input the correct title because the contentPage uses that value to show which section the page is in
 
 const navigationLinks = [
     homeBtn = {
@@ -267,10 +268,9 @@ const navigationLinks = [
 ]
 
 // Pages
-// if any change is made to the template page, those attributes must be copied over lower at the generatePage function 
 // the title of the page is irrelevant if page is static
 // the title of the page should correspond to the template type it represents (there should be a data-page="..." on the link item in the HTML)
-// the static attribute determines whether the page is a template
+// the static property determines whether the page is a template
 const pages = [
     homePage = {
         dom: document.getElementById('home-page'),
@@ -342,7 +342,7 @@ const generatePage = (items, pageToChange, nav) => {
 
 // This data should be taken from a JSON api call using fetch
 // The point of this is to simulate different pages
-// each attribute of each object corresponds to an element in the contentPage (contentPage is the only template page we have atm)
+// each property of each object corresponds to an element in the contentPage (contentPage is the only template page we have atm)
 // the object ID should correspond to the ID of the link which connects to it (this is how the link recognizes which object of the json file to display)
 let fetchedJSONdata = [
     {
@@ -420,6 +420,7 @@ const showPage = (page, nav) => {
     burgerCheck.checked = false;
     burgerChecked();
 };
+
 setEventListeners();
 
 // The next line hides all the pages on initial load
@@ -448,7 +449,7 @@ for (const li of navigationLinks) {
     featuredCont.push(li)
 }
 
-// matches previous array id with id from JSON and creates new array
+// matches the object id of the previous array(featuredCont) with the id from the JSON objects and creates a new array
 let featuredFilled = [];
 for (const li of featuredCont) {
     for (const obj of fetchedJSONdata) {
@@ -458,10 +459,10 @@ for (const li of featuredCont) {
     }
 }
 
-// removes duplicate objects from array
+// removes duplicate objects from the previous array (featuredFilled)
 function uniqBy(a, key) {
     var seen = {};
-    return a.filter(function(item) {
+    return a.filter((item) => {
         var k = key(item);
         return seen.hasOwnProperty(k) ? false : (seen[k] = true);
     })
@@ -509,3 +510,104 @@ setTimeout(() => {
     fade(8500);
     pages[0].dom.classList.contains("hidden") ? null : loopNews();
 }, 10000);
+
+
+//////////////////
+// suggested-content cards
+/////////////////
+
+// creates an array of links with the title Тип 1 && Тип 2 && Вести(FOR DEMO PURPOSES)
+let suggestedCont = [];
+for (const li of navigationLinks) {
+    if(li.title === "Тип 1" || li.title === "Тип 2" || li.title === "Вести")
+    suggestedCont.push(li)
+}
+
+// matches the object id of the previous array(suggestedCont) with the id from the JSON objects and creates a new array
+let suggestedFilled = [];
+for (const li of suggestedCont) {
+    for (const obj of fetchedJSONdata) {
+        if(obj.id === li.id) {
+            suggestedFilled.push({objTitle: obj.title, objSubtitle: obj.subtitle, objImg: obj.img, snip: obj.p1, id: li.id, title: li.title})
+        }     
+    }
+}
+
+class suggestedCard {
+    constructor(img, title, snip, btn) {
+        this.img = img,
+        this.title = title,
+        this.snip = snip,
+        this.btn = btn;
+    }
+}
+
+const suggestedCards = [
+    cardOne = new suggestedCard(
+        document.getElementById("suggested-card-one-img"),
+        document.getElementById("suggested-card-one-title"),
+        document.getElementById("suggested-card-one-snippet"),
+        document.getElementById("suggested-card-one-btn")   
+    ),
+    cardTwo = new suggestedCard(
+        document.getElementById("suggested-card-two-img"),
+        document.getElementById("suggested-card-two-title"),
+        document.getElementById("suggested-card-two-snippet"),
+        document.getElementById("suggested-card-two-btn")   
+    ),
+    cardThree = new suggestedCard(
+        document.getElementById("suggested-card-three-img"),
+        document.getElementById("suggested-card-three-title"),
+        document.getElementById("suggested-card-three-snippet"),
+        document.getElementById("suggested-card-three-btn")   
+    ),
+    cardFour = new suggestedCard(
+        document.getElementById("suggested-card-four-img"),
+        document.getElementById("suggested-card-four-title"),
+        document.getElementById("suggested-card-four-snippet"),
+        document.getElementById("suggested-card-four-btn")   
+    ),
+    cardFive = new suggestedCard(
+        document.getElementById("suggested-card-five-img"),
+        document.getElementById("suggested-card-five-title"),
+        document.getElementById("suggested-card-five-snippet"),
+        document.getElementById("suggested-card-five-btn")   
+    ),
+    cardSix = new suggestedCard(
+        document.getElementById("suggested-card-six-img"),
+        document.getElementById("suggested-card-six-title"),
+        document.getElementById("suggested-card-six-snippet"),
+        document.getElementById("suggested-card-six-btn")   
+    )
+]
+
+
+// array containing all unique links from Тип 1 && Тип 2 && Вести(FOR DEMO PURPOSES)
+let suggestedContentUnique = uniqBy(suggestedFilled, JSON.stringify)
+
+// generate random number between 2 values
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+// immediately displays suggested-card-content on initial load
+(displayCardContent = () => {
+    let count = getRandomInt(0, suggestedContentUnique.length);
+    for (const card of suggestedCards) {
+        if(count === suggestedContentUnique.length) count = 0;
+        let a = suggestedContentUnique[count];
+        card.btn.addEventListener('click', (event) => {
+            showPage(event.target.dataset.page, a);
+        })
+        card.img.setAttribute("src", suggestedContentUnique[count].objImg)
+        card.title.innerHTML = suggestedContentUnique[count].objTitle
+        card.snip.innerHTML = suggestedContentUnique[count].snip
+        count++
+    }
+})();
+
+
+
+// Todo - if you generate selected contentPage - remove that page from card
