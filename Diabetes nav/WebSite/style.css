@@ -1486,6 +1486,10 @@ footer {
     object-position: center;
 }
 
+.content-suggestion {
+    font-size: 1.2rem;
+}
+
 .content-divider {
     display: none;
     height: 1em;
