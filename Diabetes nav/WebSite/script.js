@@ -258,7 +258,12 @@ const navigationLinks = [
         dom: document.getElementById("latest-news"),
         id: 8,
         title: "Вести"
-    }    
+    },
+    educationalCaravanForcountingCarbs = {
+        dom: document.getElementById("news-three-id"),
+        id: 9,
+        title: "Вести"
+    }
 ]
 
 // Pages
@@ -270,7 +275,13 @@ const pages = [
     homePage = {
         dom: document.getElementById('home-page'),
         title: "homePage",
-        static: true
+        static: true,
+        featuredContent: {
+            title: document.getElementById("featured-content-title"),
+            snippet: document.getElementById("featured-content-snippet"),
+            btn: document.getElementById("latest-news"),
+            container: document.getElementById("featured-content")
+        }
     },
     contentPage = {
         dom: document.getElementById('content-page'),
@@ -302,7 +313,6 @@ const pages = [
         static: true
     },
 ]
-
 
 // This function generates a page 
 // if the page is static it displays the page itself
@@ -369,7 +379,7 @@ let fetchedJSONdata = [
         img: "images/diabetes-placehold.png"
     },
     {
-        title: 'COVID-19 И ДИЈАБЕТЕС',
+        title: '<span>COVID-19</span> И ДИЈАБЕТЕС',
         subtitle: ' ',
         p1: "There is a bidirectional relationship between Covid-19 and diabetes. On the one hand, diabetes is associated with an increased risk of severe Covid-19. On the other hand, new-onset diabetes and severe metabolic complications of preexisting diabetes, including diabetic ketoacidosis and hyperosmolarity for which exceptionally high doses of insulin are warranted, have been observed in patients with Covid-19.1-3 These manifestations of diabetes pose challenges in clinical management and suggest a complex pathophysiology of Covid-19–related diabetes.",
         p2: "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), the virus that causes Covid-19, binds to angiotensin-converting enzyme 2 (ACE2) receptors, which are expressed in key metabolic organs and tissues, including pancreatic beta cells, adipose tissue, the small intestine, and the kidneys.4 Thus, it is plausible that SARS-CoV-2 may cause pleiotropic alterations of glucose metabolism that could complicate the pathophysiology of preexisting diabetes or lead to new mechanisms of disease.There are also several precedents for a viral cause of ketosis-prone diabetes, including other coronaviruses that bind to ACE2 receptors.5 Greater incidences of fasting glycemia and acute-onset diabetes have been reported among patients with SARS coronavirus 1 pneumonia than among those with non-SARS pneumonia.5",
@@ -378,6 +388,17 @@ let fetchedJSONdata = [
         p4: "To address these issues, an international group of leading diabetes researchers participating in the CoviDIAB Project have established a global registry of patients with Covid-19–related diabetes (covidiab.e-dendrite.com. opens in new tab). The goal of the registry is to establish the extent and phenotype of new-onset diabetes that is defined by hyperglycemia, confirmed Covid-19, a negative history of diabetes, and a history of a normal glycated hemoglobin level. The registry, which will be expanded to include patients with preexisting diabetes who present with severe acute metabolic disturbance, may also be used to investigate the epidemiologic features and pathogenesis of Covid-19–related diabetes and to gain clues regarding appropriate care for patients during and after the course of Covid-19. Given the very short history of human infection with SARS-CoV-2, an understanding of how Covid-19–related diabetes develops, the natural history of this disease, and appropriate management will be helpful. The study of Covid-19–related diabetes may also uncover novel mechanisms of disease.",
         id: 8,
         img: "images/covid-and-diabetes.png"
+    },
+    {
+        title: 'Едукативен караван за броење <span>јаглехидрати</span>',
+        subtitle: 'БАЛАНС МК – Асоцијација за детски дијабетес на Македонија 21.03.2018 објавува:',
+        p1: "Почитувани, го стартуваме Едукативниот караван за броење јаглехидрати. Почнуваме од Радовиш. Базичен сегмент во третманот на дијабетесот бездруго е исхраната и соодветното броење јаглехидрати, како фундаментален чекор во контролата на дијабетесот. Важноста на правилната исхрана, а особено нејзиниот јагленохидратен состав и влијанието на истиот врз нивото на крвниот шеќер, е првата но и суштинска дилема со која се сретнуваат како децата и нивните семејства кога ќе се соочат со дијабетесот, така и сите лица со дијабетес понатаму.",
+        p2: "Потребата за броење јаглехидрати е важна за сите луѓе со дијабетес, но особено за оние кои се на инсулинска терапија. Броењето на јаглехидрати во исхраната на лицата со дијабетес е предуслов за успешно справување со секојдневните предизвици со кои се соочуваат овие луѓе и овозможува послободен стил на живот, правилен и нормален раст на децата и адолесцентите кои живеат со дијабетесот, подобра контрола на гликемиите кај секој еден на инсулинска терапија.",
+        lowerSubtitle: "БАЛАНС МК – Асоцијација за детски дијабетес",
+        p3: "Токму затоа, Асоцијацијата за детски дијабетес на Македонија – Баланс Мк во соработика и со логистика на Здружението на дијабетичари од Радовиш ја организира оваа прва работилница за Броење на јаглехидрати, која во суштина е вовед во Едукативниот караван за броење на јаглехидрати кој треба да опфати десетина градови во Македонија.",
+        p4: "За едукативните работилници е подготвена е и посебна едукативно-информативна брошура, веќе рецензентски одобрена од Клиниката за ендокринологија, а посветена на броењето јаглехидрати, односно на нутритивните својства на прехранбените производи, нивниот јаглехидратен состав, гликемиските индекси, практично се она што е од суштинско значење за правилно и соодветно употребување на инсулинската терапија врз основа на јаглехидратното броење. Овој прирачник од триесетина страни ќе биде делен на едукативните работилници.",
+        id: 9,
+        img: "images/counting-calories.png"
     }
 ]
 
@@ -416,3 +437,75 @@ document.getElementById('home-page').classList.remove('hidden');
 
 */
 
+//////////////////
+// loop through news section and show it on homepage
+/////////////////
+
+// creates an array of links with the title Вести
+let featuredCont = [];
+for (const li of navigationLinks) {
+    if(li.title === "Вести")
+    featuredCont.push(li)
+}
+
+// matches previous array id with id from JSON and creates new array
+let featuredFilled = [];
+for (const li of featuredCont) {
+    for (const obj of fetchedJSONdata) {
+        if(obj.id === li.id) {
+            featuredFilled.push({title: obj.title, snip: obj.p1, id: li.id})
+        }     
+    }
+}
+
+// removes duplicate objects from array
+function uniqBy(a, key) {
+    var seen = {};
+    return a.filter(function(item) {
+        var k = key(item);
+        return seen.hasOwnProperty(k) ? false : (seen[k] = true);
+    })
+}
+
+// array containing all unique links from Вести
+let featuredFilledUnique = uniqBy(featuredFilled, JSON.stringify)
+
+// does a fade effect (can be added to multiple elemenets with minor modification)
+const fade = (interval) => {
+    document.getElementById("featured-content").classList.remove("hide");
+    document.getElementById("featured-content").classList.add("visible");
+    setTimeout(function() {
+    document.getElementById("featured-content").classList.add("hide");
+    }, interval);
+}
+
+// loops through featuredFilledUnique array and displays it on featured-content on the homePage
+const loopNews = () => {
+    let count = 0;
+    setInterval(() => {
+        if(count === featuredFilledUnique.length) count = 0;
+        fade(8500);
+        let a = featuredFilledUnique[count]
+        document.getElementById("latest-news").addEventListener('click', (event) => {
+            showPage(event.target.dataset.page, a);
+        })
+        pages[0].featuredContent.title.innerHTML = featuredFilledUnique[count].title
+        pages[0].featuredContent.snippet.innerHTML = featuredFilledUnique[count].snip 
+        count++
+    }, 10000);
+}
+
+// immediately displays featured-content on initial load
+(function () {
+    document.getElementById("latest-news").addEventListener('click', (event) => {
+        showPage(event.target.dataset.page, featuredFilledUnique[1]);
+    })
+    pages[0].featuredContent.title.innerHTML = featuredFilledUnique[1].title
+    pages[0].featuredContent.snippet.innerHTML = featuredFilledUnique[1].snip
+})();
+
+// waits 10 seconds before it starts the loop
+setTimeout(() => {
+    fade(8500);
+    pages[0].dom.classList.contains("hidden") ? null : loopNews();
+}, 10000);

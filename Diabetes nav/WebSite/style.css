@@ -105,6 +105,18 @@ body {
     display: none;
 }
 
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1.5s linear;
+}
+
+  .hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1.5s, opacity 1s linear;    
+}
+
 /* =======================================================================
    1. NAVBAR
 ====================*/
@@ -721,7 +733,9 @@ footer {
 ===============*/
 
 .featured-content {
+    position: static;
     max-width: 500px;
+    height: 350px;
     color: #FFF;
     z-index: 2;
     display: flex;
@@ -744,6 +758,14 @@ footer {
 .featured-content h1,
 .featured-content p {
     text-align: center;
+}
+
+.featured-content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 /* ============
