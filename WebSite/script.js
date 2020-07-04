@@ -343,7 +343,7 @@ const generatePage = (items, pageToChange, nav) => {
 // This data should be taken from a JSON api call using fetch
 // The point of this is to simulate different pages
 // each attribute of each object corresponds to an element in the contentPage (contentPage is the only template page we have atm)
-// the object ID should correspond to the ID of the link which connects to it (this is how the link recognizes which json file to connect to)
+// the object ID should correspond to the ID of the link which connects to it (this is how the link recognizes which object of the json file to display)
 let fetchedJSONdata = [
     {
         title: 'Патот за да го разберете дијабетот започнува овде со нас',
