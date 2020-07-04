@@ -453,7 +453,7 @@ let featuredFilled = [];
 for (const li of featuredCont) {
     for (const obj of fetchedJSONdata) {
         if(obj.id === li.id) {
-            featuredFilled.push({title: obj.title, snip: obj.p1, id: li.id})
+            featuredFilled.push({objTitle: obj.title, snip: obj.p1, id: li.id, title: li.title})
         }     
     }
 }
@@ -489,7 +489,7 @@ const loopNews = () => {
         document.getElementById("latest-news").addEventListener('click', (event) => {
             showPage(event.target.dataset.page, a);
         })
-        pages[0].featuredContent.title.innerHTML = featuredFilledUnique[count].title
+        pages[0].featuredContent.title.innerHTML = featuredFilledUnique[count].objTitle
         pages[0].featuredContent.snippet.innerHTML = featuredFilledUnique[count].snip 
         count++
     }, 10000);
@@ -500,7 +500,7 @@ const loopNews = () => {
     document.getElementById("latest-news").addEventListener('click', (event) => {
         showPage(event.target.dataset.page, featuredFilledUnique[1]);
     })
-    pages[0].featuredContent.title.innerHTML = featuredFilledUnique[1].title
+    pages[0].featuredContent.title.innerHTML = featuredFilledUnique[1].objTitle
     pages[0].featuredContent.snippet.innerHTML = featuredFilledUnique[1].snip
 })();
 
